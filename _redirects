@@ -1,0 +1,8 @@
+# Netlify Redirects Configuration
+# Place this file in the root of your site (vegasplumbingpros/)
+
+# Old WordPress URLs (if any existed) - add them here as needed
+# Example: /old-url  /new-url  301
+
+# Fallback for single-page app routing
+/*  /index.html  200

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- PRIMARY SEO INFRASTRUCTURE -->
+    <title>Las Vegas Water Waste Auditor | LVVWD Leak Cost Calculator 2024</title>
+    <meta name="description" content="Audit your Las Vegas water bill financial liability. Use our institutional-grade calculator to see how household leaks push your utility billing into expensive LVVWD tiers.">
+    <meta name="keywords" content="Las Vegas water bill calculator, LVVWD tiered rates, water leak cost Vegas, high water bill Clark County, plumbing audit tool">
+    <link rel="canonical" href="https://vegasplumbingpros.com/tools/water-waste-auditor">
+
+    <!-- STRUCTURED DATA FOR GOOGLE RICH RESULTS -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Vegas Water Waste Auditor",
+      "operatingSystem": "Web",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Calculates financial liability of water leaks based on Las Vegas Valley Water District tiered rate schedules."
+    }
+    </script>
+    
+    <!-- FONT INFRASTRUCTURE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
+    
+<style>
+/* VEGAS PLUMBING PROS - VOID APERTURE DESIGN SYSTEM */
+:root {
+    --void:#020408;
+    --orange:#f97316;
+    --orange-hover:#ea580c;
+    --cyan:#22d3ee;
+    --emerald:#22c55e;
+    --surface-raised:rgba(10,22,40,.4);
+    --surface-border:rgba(255,255,255,.08);
+    --surface-border-hover:rgba(255,255,255,.16);
+    --font-display:'Anton',sans-serif;
+    --font-tech:'Space Grotesk',sans-serif;
+    --font-body:'Manrope',sans-serif;
+    --radius-pill:999px;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+
+body{
+    font-family:var(--font-body);
+    background:var(--void);
+    color:rgba(255,255,255,.85);
+    line-height:1.7;
+    overflow-x:hidden;
+    font-weight:400;
+}
+
+/* HEADER - MATCHES LANDING PAGE */
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:100;
+    border-bottom:1px solid var(--surface-border);
+    background:rgba(2,4,8,.8);
+    backdrop-filter:blur(24px);
+}
+
+.header-inner{
+    max-width:1280px;
+    margin:0 auto;
+    padding:20px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{display:flex;align-items:center;gap:12px}
+
+.logo-mark{
+    width:36px;
+    height:36px;
+    background:var(--orange);
+    border-radius:6px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.logo-type{
+    font-family:var(--font-display);
+    font-size:20px;
+    text-transform:uppercase;
+    letter-spacing:-.01em;
+    line-height:1;
+    color:white;
+}
+
+.logo-type .orange{color:var(--orange)}
+
+.header-cta{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    padding:12px 28px;
+    border:1.5px solid rgba(249,115,22,.6);
+    border-radius:var(--radius-pill);
+    color:var(--orange);
+    font-family:var(--font-tech);
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:.16em;
+    font-weight:500;
+    transition:all .3s cubic-bezier(.16,1,.3,1);
+    text-decoration:none;
+}
+
+.header-cta:hover{
+    background:rgba(249,115,22,.08);
+    border-color:var(--orange);
+}
+
+.header-cta svg{width:16px;height:16px}
+
+/* TOOL SECTION */
+.tool-section{padding:140px 40px 80px}
+
+.container{
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.tool-header{
+    margin-bottom:64px;
+}
+
+.tool-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    font-family:var(--font-tech);
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:.2em;
+    color:var(--orange);
+    font-weight:600;
+    margin-bottom:24px;
+}
+
+.tool-tag::before{
+    content:'';
+    width:8px;
+    height:8px;
+    background:var(--orange);
+    border-radius:50%;
+}
+
+.tool-title{
+    font-family:var(--font-display);
+    font-size:clamp(48px,6vw,72px);
+    line-height:.95;
+    text-transform:uppercase;
+    letter-spacing:-.005em;
+    margin-bottom:24px;
+    color:white;
+}
+
+.tool-title .highlight{
+    color:var(--orange);
+    font-style:italic;
+}
+
+.tool-desc{
+    font-size:17px;
+    color:rgba(255,255,255,.65);
+    max-width:600px;
+    line-height:1.8;
+}
+
+/* CALCULATOR GRID */
+.calc-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:48px;
+    margin-bottom:80px;
+}
+
+.calc-controls{
+    display:flex;
+    flex-direction:column;
+    gap:48px;
+}
+
+.control-group{
+    border:1px solid var(--surface-border);
+    background:var(--surface-raised);
+    padding:40px;
+    border-radius:16px;
+}
+
+.control-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:24px;
+}
+
+.control-label{
+    font-family:var(--font-tech);
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:.2em;
+    color:rgba(255,255,255,.5);
+    font-weight:600;
+}
+
+.control-value{
+    font-family:var(--font-display);
+    font-size:44px;
+    color:var(--orange);
+    line-height:1;
+}
+
+.control-unit{
+    font-family:var(--font-tech);
+    font-size:10px;
+    color:rgba(255,255,255,.5);
+    text-transform:uppercase;
+    font-weight:600;
+    margin-left:8px;
+}
+
+/* RANGE SLIDER */
+input[type="range"]{
+    width:100%;
+    height:8px;
+    background:rgba(255,255,255,.1);
+    border-radius:20px;
+    outline:none;
+    -webkit-appearance:none;
+    cursor:pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:28px;
+    height:28px;
+    background:var(--orange);
+    border-radius:50%;
+    border:5px solid rgba(2,4,8,.9);
+    box-shadow:0 4px 12px rgba(249,115,22,.4);
+    cursor:pointer;
+}
+
+input[type="range"]::-moz-range-thumb{
+    width:28px;
+    height:28px;
+    background:var(--orange);
+    border-radius:50%;
+    border:5px solid rgba(2,4,8,.9);
+    box-shadow:0 4px 12px rgba(249,115,22,.4);
+    cursor:pointer;
+}
+
+/* FIXTURE GRID */
+.fixture-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.fixture-btn{
+    background:rgba(255,255,255,.05);
+    border:1.5px solid var(--surface-border);
+    padding:20px;
+    border-radius:12px;
+    font-family:var(--font-display);
+    font-size:24px;
+    cursor:pointer;
+    transition:all .3s cubic-bezier(.16,1,.3,1);
+    color:rgba(255,255,255,.4);
+    text-align:center;
+}
+
+.fixture-btn:hover{
+    border-color:var(--surface-border-hover);
+}
+
+.fixture-btn.active{
+    background:var(--orange);
+    border-color:var(--orange);
+    color:white;
+}
+
+/* DURATION INPUT */
+.duration-input{
+    width:100%;
+    padding:20px;
+    background:rgba(255,255,255,.05);
+    border:1.5px solid var(--surface-border);
+    border-radius:12px;
+    font-family:var(--font-display);
+    font-size:28px;
+    color:white;
+    outline:none;
+    text-align:center;
+}
+
+.duration-input:focus{
+    border-color:var(--orange);
+}
+
+/* RESULTS PANEL */
+.results-panel{
+    background:rgba(10,22,40,.6);
+    border:1px solid var(--surface-border);
+    padding:40px;
+    border-radius:16px;
+    display:flex;
+    flex-direction:column;
+    gap:32px;
+    position:sticky;
+    top:120px;
+}
+
+.stat-group p:first-child{
+    font-family:var(--font-tech);
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:.2em;
+    color:var(--orange);
+    margin-bottom:12px;
+    font-weight:600;
+}
+
+.stat-val{
+    font-family:var(--font-display);
+    font-size:56px;
+    line-height:.95;
+    color:white;
+}
+
+.stat-unit{
+    font-family:var(--font-tech);
+    font-size:12px;
+    color:rgba(255,255,255,.5);
+    margin-left:8px;
+    font-weight:600;
+}
+
+.accrued-box{
+    border-top:1px solid var(--surface-border);
+    padding-top:32px;
+}
+
+.accrued-val{color:var(--emerald)}
+
+.annual-card{
+    background:rgba(255,255,255,.03);
+    padding:32px;
+    border-radius:16px;
+    border:1px solid var(--surface-border);
+}
+
+.annual-card .stat-val{
+    font-size:48px;
+    color:var(--orange);
+}
+
+.tier-indicator{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:16px;
+    color:rgba(255,255,255,.5);
+    font-family:var(--font-tech);
+    font-size:10px;
+    text-transform:uppercase;
+    font-weight:600;
+}
+
+/* CTA BUTTON */
+.cta-btn{
+    background:var(--orange);
+    color:white;
+    padding:24px;
+    border-radius:12px;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    transition:all .3s cubic-bezier(.16,1,.3,1);
+    margin-top:24px;
+    text-align:center;
+    border:none;
+}
+
+.cta-btn:hover{
+    background:var(--orange-hover);
+    transform:translateY(-2px);
+    box-shadow:0 12px 32px rgba(249,115,22,.3);
+}
+
+.cta-number{
+    font-family:var(--font-display);
+    font-size:32px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.cta-subtext{
+    font-family:var(--font-tech);
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:.16em;
+    opacity:.9;
+    font-weight:600;
+}
+
+/* SEO CONTENT SECTION */
+.seo-section{
+    max-width:1200px;
+    margin:0 auto;
+    padding:80px 40px;
+}
+
+.seo-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:64px;
+}
+
+.seo-block h2{
+    font-family:var(--font-display);
+    font-size:32px;
+    text-transform:uppercase;
+    margin-bottom:24px;
+    color:white;
+    line-height:1.1;
+}
+
+.seo-block p{
+    color:rgba(255,255,255,.65);
+    margin-bottom:20px;
+    font-size:15px;
+    line-height:1.8;
+}
+
+.seo-block ul{
+    list-style:none;
+    padding:0;
+}
+
+.seo-block li{
+    font-weight:600;
+    margin-bottom:12px;
+    display:flex;
+    gap:12px;
+    color:rgba(255,255,255,.75);
+    font-size:15px;
+}
+
+.seo-block li::before{
+    content:'→';
+    color:var(--orange);
+}
+
+/* TRUST STRIP */
+.trust-strip{
+    background:rgba(255,255,255,.02);
+    border-top:1px solid var(--surface-border);
+    border-bottom:1px solid var(--surface-border);
+    padding:64px 40px;
+}
+
+.trust-inner{
+    max-width:1200px;
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+    gap:64px;
+    flex-wrap:wrap;
+}
+
+.marker{
+    text-align:center;
+    opacity:.6;
+}
+
+.marker h4{
+    font-family:var(--font-display);
+    font-size:28px;
+    color:white;
+    margin-bottom:4px;
+}
+
+.marker p{
+    font-family:var(--font-tech);
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:.2em;
+    font-weight:600;
+    color:rgba(255,255,255,.5);
+}
+
+/* FOOTER */
+footer{
+    padding:64px 40px;
+    border-top:1px solid var(--surface-border);
+}
+
+.footer-inner{
+    max-width:1200px;
+    margin:0 auto;
+    display:flex;
+    gap:24px;
+    align-items:flex-start;
+}
+
+.footer-disclaimer{
+    font-size:12px;
+    line-height:1.8;
+    color:rgba(255,255,255,.45);
+    letter-spacing:.01em;
+}
+
+.footer-disclaimer strong{
+    color:rgba(255,255,255,.75);
+    font-weight:600;
+}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+    .calc-grid{
+        grid-template-columns:1fr;
+    }
+    .results-panel{
+        position:relative;
+        top:0;
+    }
+}
+
+@media(max-width:768px){
+    .tool-section{padding:120px 24px 60px}
+    .header-inner{padding:20px 24px}
+    .calc-grid{gap:32px}
+    .calc-controls{gap:32px}
+    .control-group{padding:28px}
+    .results-panel{padding:32px}
+    .fixture-grid{grid-template-columns:repeat(2,1fr)}
+    .seo-section{padding:60px 24px}
+    .seo-grid{gap:48px}
+    .trust-strip{padding:48px 24px}
+    .trust-inner{gap:40px}
+    footer{padding:48px 24px}
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance:none;
+    margin:0;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="/" class="logo">
+            <div class="logo-mark">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                </svg>
+            </div>
+            <div class="logo-type">Vegas <span class="orange">Plumbing</span> Pros</div>
+        </a>
+        <a href="tel:+18882174109" class="header-cta call-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span class="phone-text">Call Now</span>
+        </a>
+    </div>
+</header>
+
+<section class="tool-section">
+    <div class="container">
+        <div class="tool-header">
+            <div class="tool-tag">Live Volumetric Liability Audit</div>
+            <h1 class="tool-title">High Bill <span class="highlight">Auditor</span></h1>
+            <p class="tool-desc">
+                Calculate the exact cost of water loss using the 2024 Las Vegas Valley Water District (LVVWD) tiered residential rate structure.
+            </p>
+        </div>
+
+        <div class="calc-grid">
+            <div class="calc-controls">
+                <!-- CONTROL 1: DRIP RATE -->
+                <div class="control-group">
+                    <div class="control-header">
+                        <span class="control-label">01. Flow Rate Velocity</span>
+                        <div>
+                            <span class="control-value" id="drips-display">60</span>
+                            <span class="control-unit">Drips/Min</span>
+                        </div>
+                    </div>
+                    <input type="range" id="drips-range" min="1" max="300" value="60" step="1">
+                </div>
+
+                <!-- CONTROL 2: FIXTURE COUNT -->
+                <div class="control-group">
+                    <div class="control-header">
+                        <span class="control-label">02. Active Leak Sources</span>
+                    </div>
+                    <div class="fixture-grid">
+                        <button class="fixture-btn active" data-val="1">1</button>
+                        <button class="fixture-btn" data-val="2">2</button>
+                        <button class="fixture-btn" data-val="3">3</button>
+                        <button class="fixture-btn" data-val="4">4</button>
+                        <button class="fixture-btn" data-val="5">5</button>
+                        <button class="fixture-btn" data-val="6">6+</button>
+                    </div>
+                </div>
+
+                <!-- CONTROL 3: DURATION -->
+                <div class="control-group">
+                    <div class="control-header">
+                        <span class="control-label">03. Duration (Days Running)</span>
+                    </div>
+                    <input type="number" id="days-input" class="duration-input" value="30" min="1" max="365">
+                </div>
+            </div>
+
+            <!-- RESULTS PANEL -->
+            <div class="results-panel">
+                <div class="stat-group">
+                    <p>Monthly Waste Volume</p>
+                    <div>
+                        <span class="stat-val" id="gpm-display">0</span>
+                        <span class="stat-unit">Gallons</span>
+                    </div>
+                </div>
+
+                <div class="stat-group accrued-box">
+                    <p>Financial Damage (Accrued)</p>
+                    <div>
+                        <span class="stat-val accrued-val" id="sunk-display">$0.00</span>
+                    </div>
+                </div>
+
+                <div class="annual-card">
+                    <p style="font-family:var(--font-tech);font-size:9px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.2em;margin-bottom:12px;font-weight:600">Annual Projected Drain</p>
+                    <span class="stat-val" id="annual-display">$0.00</span>
+                    <div class="tier-indicator">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/>
+                        </svg>
+                        <span id="tier-name">Tier 1: Essential</span>
+                    </div>
+                </div>
+
+                <a href="tel:+18882174109" class="cta-btn call-link">
+                    <div class="cta-number phone-text">Call Now</div>
+                    <span class="cta-subtext">Terminate Water Loss Now</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STRUCTURED SEO CONTENT -->
+<section class="seo-section">
+    <div class="seo-grid">
+        <div class="seo-block">
+            <h2>Vegas Water Rate Impact</h2>
+            <p>Las Vegas homeowners are subject to the <strong>LVVWD 2024 Tiered Rate Schedule</strong>. Unlike other cities, Vegas rates are designed to penalize high volume usage to encourage conservation.</p>
+            <p>A "silent leak" like a running toilet can easily add 3,000 to 5,000 gallons per month to your bill. This volume doesn't just cost more; it pushes your entire bill into Tier 3 or Tier 4, where the cost per gallon nearly quadruples.</p>
+        </div>
+        <div class="seo-block">
+            <h2>Current LVVWD Residential Tiers</h2>
+            <ul>
+                <li>Tier 1 (Essential): $1.45 per 1,000 Gal</li>
+                <li>Tier 2 (Standard): $2.58 per 1,000 Gal</li>
+                <li>Tier 3 (Elevated): $3.92 per 1,000 Gal</li>
+                <li>Tier 4 (Excessive): $5.61 per 1,000 Gal</li>
+            </ul>
+        </div>
+        <div class="seo-block">
+            <h2>Hard Water & Leaks</h2>
+            <p>The high mineral content in Vegas water (Hard Water) accelerates the degradation of rubber flappers and fixture seals. This leads to slow drips that go unnoticed but cause massive "Financial Drain."</p>
+            <p>If your bill has increased by more than 20% without a change in habits, you likely have a volumetric leak in your primary line or irrigation system.</p>
+        </div>
+    </div>
+</section>
+
+<div class="trust-strip">
+    <div class="trust-inner">
+        <div class="marker"><h4>LVVWD</h4><p>Rate Aligned</p></div>
+        <div class="marker"><h4>15,140</h4><p>Drip Constant</p></div>
+        <div class="marker"><h4>2024</h4><p>Verified Data</p></div>
+        <div class="marker"><h4>702</h4><p>Region Specific</p></div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="flex-shrink:0;color:rgba(255,255,255,.3)">
+            <circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>
+        </svg>
+        <div class="footer-disclaimer">
+            <strong>Institutional Disclaimer:</strong> This auditor provides mathematical volumetric projections based on a standardized 15,140:1 drip-to-gallon ratio and 2024 LVVWD tiered rate schedules. This is not a plumbing inspection, professional assessment, or utility bill guarantee. Projections assume leak volume is secondary to base Tier 1 usage. Vegas Plumbing Pros is a data platform and disclaims all liability for physical property damage or utility discrepancies. <strong>Last Rate Verification: Jan 2024.</strong>
+        </div>
+    </div>
+</footer>
+
+<script>
+// CALCULATOR LOGIC - IDENTICAL TO ORIGINAL
+const DRIPS_PER_GALLON = 15140;
+const TIERS = [
+    { limit: 5000, rate: 1.45, label: "Tier 1: Essential" },
+    { limit: 10000, rate: 2.58, label: "Tier 2: Standard" },
+    { limit: 20000, rate: 3.92, label: "Tier 3: Elevated" },
+    { limit: Infinity, rate: 5.61, label: "Tier 4: Excessive" }
+];
+
+let state = { drips: 60, fixtures: 1, days: 30 };
+
+const els = {
+    range: document.getElementById('drips-range'),
+    disp: document.getElementById('drips-display'),
+    fBtns: document.querySelectorAll('.fixture-btn'),
+    dIn: document.getElementById('days-input'),
+    gpm: document.getElementById('gpm-display'),
+    sunk: document.getElementById('sunk-display'),
+    ann: document.getElementById('annual-display'),
+    tier: document.getElementById('tier-name')
+};
+
+function calcCost(gals) {
+    let rem = gals;
+    let cost = 0;
+    let prev = 0;
+    for (const t of TIERS) {
+        const size = t.limit - prev;
+        const vol = Math.min(rem, size);
+        cost += (vol / 1000) * t.rate;
+        rem -= vol;
+        prev = t.limit;
+        if (rem <= 0) break;
+    }
+    return cost;
+}
+
+function update() {
+    // Clean inputs
+    state.days = Math.min(Math.max(1, parseInt(els.dIn.value) || 1), 365);
+    
+    const dDay = state.drips * 60 * 24 * state.fixtures;
+    const gpd = dDay / DRIPS_PER_GALLON;
+    const gpm = gpd * 30.417; // Weighted monthly avg
+    const gAnn = gpd * 365;
+
+    const sCost = calcCost(gpd * state.days);
+    const aCost = calcCost(gAnn);
+    const currentT = TIERS.find(t => gpm <= t.limit) || TIERS[3];
+
+    els.disp.innerText = state.drips;
+    els.gpm.innerText = Math.round(gpm).toLocaleString();
+    els.sunk.innerText = `$${sCost.toFixed(2)}`;
+    els.ann.innerText = `$${aCost.toFixed(2)}`;
+    els.tier.innerText = currentT.label;
+}
+
+els.range.oninput = (e) => {
+    state.drips = parseInt(e.target.value);
+    update();
+};
+
+els.fBtns.forEach(b => b.onclick = () => {
+    els.fBtns.forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    state.fixtures = parseInt(b.dataset.val);
+    update();
+});
+
+els.dIn.oninput = update;
+
+window.onload = update;
+
+// DNI PHONE NUMBER REPLACEMENT
+(function(){
+  var p='(888) 217-4109',t='tel:+18882174109';
+  document.querySelectorAll('.phone-text').forEach(function(e){e.textContent=p});
+  document.querySelectorAll('.call-link').forEach(function(e){e.href=t});
+})();
+</script>
+
+</body>
+</html>

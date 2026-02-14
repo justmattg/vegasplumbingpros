@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vegas Plumbing Pros — Free 24/7 Plumbing Help for Las Vegas Homeowners</title>
+  <meta name="description" content="Connect with licensed Las Vegas plumbing pros in minutes. Free service for homeowners — water heaters, leaks, drains, emergencies. Call 24/7.">
+  <link rel="canonical" href="https://vegasplumbingpros.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Vegas Plumbing Pros","url":"https://vegasplumbingpros.com","description":"Free service connecting Las Vegas homeowners with local plumbing providers.","areaServed":{"@type":"City","name":"Las Vegas"},"contactPoint":{"@type":"ContactPoint","telephone":"+1-888-217-4109","contactType":"customer service"}}
+  </script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#020408;--dark:#050b14;--dark-card:#0a1628;
+  --orange:#f97316;--orange-hover:#ea580c;--orange-glow:rgba(249,115,22,.35);--orange-subtle:rgba(249,115,22,.08);
+  --cyan:#22d3ee;--cyan-glow:rgba(34,211,238,.15);
+  --green:#22c55e;
+  --white:#ffffff;--off-white:#f8fafc;--warm-white:#fffbf5;
+  --slate-900:#0f172a;--slate-800:#1e293b;--slate-700:#334155;--slate-600:#475569;
+  --slate-500:#64748b;--slate-400:#94a3b8;--slate-300:#cbd5e1;--slate-200:#e2e8f0;--slate-100:#f1f5f9;
+  --font-display:'Anton',sans-serif;
+  --font-tech:'Space Grotesk',sans-serif;
+  --font-body:'Manrope',sans-serif;
+  --radius:8px;--radius-lg:12px;--radius-xl:16px;--radius-2xl:24px;--radius-full:999px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);color:var(--slate-800);background:var(--black);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{font-family:inherit;cursor:pointer;border:none;background:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--black)}::-webkit-scrollbar-thumb{background:var(--slate-800);border-radius:3px}
+
+@keyframes ping{75%,100%{transform:scale(2.5);opacity:0}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 0 var(--orange-glow)}50%{box-shadow:0 0 0 14px transparent}}
+@keyframes gradient-shift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes spin-slow{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes counter-spin{from{transform:rotate(0)}to{transform:rotate(-360deg)}}
+
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+.reveal-d4{transition-delay:.4s}.reveal-d5{transition-delay:.5s}
+
+/* DISCLOSURE - REMOVED */
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;transition:all .4s cubic-bezier(.16,1,.3,1)}
+header.scrolled{background:rgba(2,4,8,.92);backdrop-filter:blur(20px) saturate(1.8);padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-mark{width:36px;height:36px;background:var(--orange);border-radius:6px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(249,115,22,.3)}
+.logo-mark svg{width:20px;height:20px;color:var(--white)}
+.logo-type{font-family:var(--font-display);font-size:22px;color:var(--white);text-transform:uppercase;letter-spacing:.02em;line-height:1}
+.logo-type .orange{color:var(--orange)}
+/* NAV - REMOVED */
+
+.header-cta-wrap{display:flex;align-items:center;gap:16px}
+.header-phone{display:flex;align-items:center;gap:8px;font-family:var(--font-tech);font-size:13px;font-weight:600;color:var(--slate-300);letter-spacing:.04em;transition:color .3s}
+.header-phone:hover{color:var(--white)}
+.header-phone svg{width:14px;height:14px}
+.btn-header{background:var(--orange);color:var(--white);padding:10px 24px;border-radius:var(--radius-full);font-family:var(--font-tech);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;transition:all .3s;box-shadow:0 4px 16px rgba(249,115,22,.25);display:inline-flex;align-items:center}
+.btn-header:hover{background:var(--orange-hover);transform:translateY(-1px);box-shadow:0 6px 24px rgba(249,115,22,.35)}
+.mobile-toggle{display:none;color:var(--white);padding:8px}
+.mobile-toggle svg{width:24px;height:24px}
+
+/* Mobile Nav */
+.mobile-nav{display:none;position:fixed;inset:0;background:var(--black);z-index:200;flex-direction:column;padding:24px}
+.mobile-nav.open{display:flex}
+.mobile-nav-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:48px}
+.mobile-nav-close{color:var(--white);padding:8px;background:none;border:none;cursor:pointer}
+.mobile-nav-close svg{width:28px;height:28px}
+.mobile-nav-links{display:flex;flex-direction:column;gap:4px;flex:1}
+.mobile-nav-links a{display:block;padding:18px 0;font-family:var(--font-display);font-size:32px;color:var(--white);text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.05);transition:color .2s}
+.mobile-nav-links a:hover{color:var(--orange)}
+.mobile-nav-bottom{padding-top:24px;display:flex;flex-direction:column;gap:12px}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:var(--black);overflow:hidden;padding:140px 0 100px}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+.hero-glow-1{position:absolute;top:-20%;right:-10%;width:800px;height:800px;background:radial-gradient(circle,rgba(249,115,22,.08) 0%,transparent 60%);pointer-events:none}
+.hero-glow-2{position:absolute;bottom:-30%;left:-15%;width:700px;height:700px;background:radial-gradient(circle,rgba(34,211,238,.05) 0%,transparent 60%);pointer-events:none}
+.hero-orb{position:absolute;top:10%;right:8%;width:360px;height:360px;border:1px dashed rgba(255,255,255,.04);border-radius:50%;animation:spin-slow 90s linear infinite;pointer-events:none}
+.hero-orb::after{content:'';position:absolute;top:50%;left:50%;width:200px;height:200px;margin:-100px 0 0 -100px;border:1px dashed rgba(255,255,255,.03);border-radius:50%;animation:counter-spin 60s linear infinite}
+.hero-fade{position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,var(--off-white),transparent);pointer-events:none;z-index:2}
+.hero-layout{display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center;position:relative;z-index:3}
+
+.hero-status{display:inline-flex;align-items:center;gap:10px;margin-bottom:32px}
+.ping{position:relative;width:8px;height:8px}
+.ping::before{content:'';position:absolute;inset:0;border-radius:50%;background:var(--green);animation:ping 1.5s cubic-bezier(0,0,.2,1) infinite}
+.ping::after{content:'';display:block;width:8px;height:8px;border-radius:50%;background:var(--green);position:relative}
+.status-text{font-family:var(--font-tech);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--green)}
+
+.hero h1{font-family:var(--font-display);font-size:clamp(52px,7vw,96px);line-height:.92;color:var(--white);text-transform:uppercase;margin-bottom:28px;letter-spacing:-.01em}
+.hero h1 .grad{background:linear-gradient(135deg,var(--orange),var(--cyan));background-size:200% 200%;animation:gradient-shift 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:17px;color:var(--slate-400);line-height:1.7;max-width:520px;margin-bottom:40px;border-left:2px solid var(--orange);padding-left:20px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px}
+.btn-call{display:inline-flex;align-items:center;gap:12px;background:var(--orange);color:var(--white);padding:18px 36px;border-radius:var(--radius-full);font-family:var(--font-tech);font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;transition:all .3s;box-shadow:0 0 40px -8px rgba(249,115,22,.5);animation:pulse-glow 3s ease-in-out infinite}
+.btn-call:hover{background:var(--orange-hover);transform:translateY(-2px);box-shadow:0 0 60px -8px rgba(249,115,22,.6)}
+.btn-call svg{width:20px;height:20px;transition:transform .3s}
+.btn-call:hover svg{transform:rotate(15deg)}
+.btn-tools{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:18px 32px;border-radius:var(--radius-full);font-family:var(--font-tech);font-size:14px;font-weight:600;letter-spacing:.04em;transition:all .3s;backdrop-filter:blur(8px)}
+.btn-tools:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);transform:translateY(-1px)}
+.btn-tools svg{width:16px;height:16px;transition:transform .3s}
+.btn-tools:hover svg{transform:translateX(3px)}
+.hero-trust{display:flex;gap:24px;flex-wrap:wrap}
+.trust-chip{display:flex;align-items:center;gap:8px;font-family:var(--font-tech);font-size:12px;font-weight:500;color:var(--slate-500);text-transform:uppercase;letter-spacing:.06em}
+.trust-chip svg{width:14px;height:14px;flex-shrink:0}
+.trust-chip .green{color:var(--green)}.trust-chip .cyan{color:var(--cyan)}.trust-chip .orange{color:var(--orange)}
+
+/* Hero Card */
+.hero-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-xl);overflow:hidden;backdrop-filter:blur(12px);position:relative}
+.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(249,115,22,.3),transparent)}
+.hero-card-header{padding:24px 28px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between}
+.hero-card-label{font-family:var(--font-tech);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--orange)}
+.hero-card-live{display:flex;align-items:center;gap:6px;font-family:var(--font-tech);font-size:10px;color:var(--green);text-transform:uppercase;letter-spacing:.15em;font-weight:600}
+.hero-card-live .ping{width:6px;height:6px}
+.hero-card-live .ping::before,.hero-card-live .ping::after{width:6px;height:6px}
+.hero-card-stats{display:grid;grid-template-columns:1fr 1fr}
+.hero-stat{padding:24px 28px;text-align:center;border-right:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.hero-stat:nth-child(2n){border-right:none}
+.hero-stat-val{font-family:var(--font-display);font-size:36px;color:var(--white);line-height:1;margin-bottom:4px;text-transform:uppercase}
+.hero-stat-lbl{font-family:var(--font-tech);font-size:10px;color:var(--slate-500);text-transform:uppercase;letter-spacing:.12em}
+.hero-card-features{padding:24px 28px;display:flex;flex-direction:column;gap:16px}
+.hero-feature{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--slate-300)}
+.hero-feature svg{width:16px;height:16px;color:var(--green);flex-shrink:0}
+
+/* STATS TICKER */
+.stats-ticker{background:var(--dark);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);position:relative;z-index:4}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-cell{padding:40px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.05);transition:background .3s}
+.stat-cell:last-child{border-right:none}
+.stat-cell:hover{background:rgba(255,255,255,.02)}
+.stat-val{font-family:var(--font-display);font-size:clamp(32px,4vw,48px);color:var(--white);text-transform:uppercase;margin-bottom:4px;transition:color .3s}
+.stat-cell:hover .stat-val{color:var(--orange)}
+.stat-lbl{font-family:var(--font-tech);font-size:11px;color:var(--slate-500);text-transform:uppercase;letter-spacing:.12em}
+
+/* SECTION BASES */
+.light-section{background:var(--off-white);padding:100px 0;position:relative}
+.warm-section{background:var(--warm-white);padding:100px 0}
+.dark-section{background:var(--black);padding:100px 0;color:var(--white);position:relative;overflow:hidden}
+.dark-section .ambient{position:absolute;top:50%;left:50%;width:1000px;height:600px;margin:-300px 0 0 -500px;background:radial-gradient(ellipse,rgba(249,115,22,.04) 0%,transparent 60%);pointer-events:none}
+.sec-label{font-family:var(--font-tech);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--orange);margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.sec-label::before{content:'';width:32px;height:1px;background:var(--orange)}
+.sec-title{font-family:var(--font-display);font-size:clamp(32px,4vw,52px);text-transform:uppercase;line-height:.95;margin-bottom:16px;letter-spacing:-.01em}
+.light-section .sec-title,.warm-section .sec-title{color:var(--slate-900)}
+.dark-section .sec-title{color:var(--white)}
+.sec-title .muted{color:var(--slate-300)}.dark-section .sec-title .muted{color:var(--slate-700)}
+.sec-sub{font-size:17px;line-height:1.7;max-width:560px}
+.light-section .sec-sub,.warm-section .sec-sub{color:var(--slate-600)}.dark-section .sec-sub{color:var(--slate-400)}
+
+/* HOW IT WORKS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:64px;position:relative}
+.steps::before{content:'';position:absolute;top:52px;left:calc(16.66% + 16px);right:calc(16.66% + 16px);height:1px;background:linear-gradient(90deg,var(--orange),var(--cyan),var(--orange));opacity:.25}
+.step{text-align:center;position:relative}
+.step-icon{width:104px;height:104px;margin:0 auto 28px;border-radius:50%;background:var(--white);border:1px solid var(--slate-200);display:flex;align-items:center;justify-content:center;transition:all .4s;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+.step:hover .step-icon{background:var(--orange);border-color:var(--orange);box-shadow:0 8px 32px rgba(249,115,22,.2);transform:translateY(-4px)}
+.step-icon svg{width:36px;height:36px;color:var(--orange);transition:color .4s}
+.step:hover .step-icon svg{color:var(--white)}
+.step-num{font-family:var(--font-tech);font-size:10px;font-weight:700;letter-spacing:.15em;color:var(--orange);text-transform:uppercase;margin-bottom:8px}
+.step h3{font-family:var(--font-display);font-size:22px;text-transform:uppercase;color:var(--slate-900);margin-bottom:8px}
+.step p{font-size:14px;color:var(--slate-500);line-height:1.6;max-width:280px;margin:0 auto}
+
+/* SERVICES CAROUSEL - INTERACTIVE HORIZONTAL ACCORDION */
+.services-carousel{position:relative;overflow:hidden;margin-top:48px}
+.carousel-wrapper{display:flex;gap:0;overflow:visible;padding:24px 0}
+.carousel-card{position:relative;flex:1;height:500px;background:var(--dark-card);border:1px solid rgba(255,255,255,.08);overflow:hidden;cursor:pointer;transition:flex .6s cubic-bezier(.16,1,.3,1),border-color .4s;flex-shrink:0;border-right:none}
+.carousel-card:last-child{border-right:1px solid rgba(255,255,255,.08)}
+.carousel-card.active{flex:3;border-color:rgba(249,115,22,.4)}
+.carousel-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(100%);opacity:0;transition:opacity .6s cubic-bezier(.16,1,.3,1)}
+.carousel-card.active .carousel-card-bg{opacity:.25}
+.carousel-card-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(2,4,8,.95) 0%,rgba(2,4,8,.7) 40%,rgba(2,4,8,.3) 70%,transparent 100%)}
+.carousel-card-number{position:absolute;top:20px;right:20px;font-family:var(--font-display);font-size:140px;color:rgba(255,255,255,.05);line-height:1;pointer-events:none;opacity:0;transition:opacity .6s .2s;user-select:none}
+.carousel-card.active .carousel-card-number{opacity:1}
+.carousel-card-label{position:absolute;top:28px;left:28px;font-family:var(--font-tech);font-size:9px;text-transform:uppercase;letter-spacing:.2em;color:rgba(249,115,22,1);background:transparent;backdrop-filter:none;padding:9px 20px;border-radius:var(--radius-full);border:1.5px solid rgba(249,115,22,.6);opacity:0;transform:translateY(-10px);transition:all .5s cubic-bezier(.16,1,.3,1) .2s;box-shadow:none;font-weight:600}
+.carousel-card.active .carousel-card-label{opacity:1;transform:translateY(0)}
+.carousel-card-side{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-90deg);transform-origin:center;display:flex;flex-direction:column;align-items:center;gap:12px;white-space:nowrap;transition:opacity .4s}
+.carousel-card.active .carousel-card-side{opacity:0;pointer-events:none}
+.carousel-card-side-num{font-family:var(--font-tech);font-size:11px;color:var(--orange);font-weight:600;letter-spacing:.1em}
+.carousel-card-side-text{font-family:var(--font-display);font-size:20px;color:rgba(255,255,255,.9);text-transform:uppercase;letter-spacing:.02em;transition:color .4s;font-weight:400}
+.carousel-card:hover .carousel-card-side-text{color:var(--white)}
+.carousel-card-content{position:absolute;bottom:56px;left:48px;right:48px;opacity:0;transform:translateX(-20px);transition:opacity .5s cubic-bezier(.16,1,.3,1) .15s,transform .5s cubic-bezier(.16,1,.3,1) .15s;pointer-events:none;z-index:10}
+.carousel-card.active .carousel-card-content{opacity:1;transform:translateX(0);pointer-events:auto}
+.carousel-card-content h3{font-family:var(--font-display);font-size:44px;color:rgba(255,255,255,.95);text-transform:uppercase;margin-bottom:20px;line-height:1;letter-spacing:0.01em;text-shadow:0 2px 12px rgba(0,0,0,.6);font-weight:400}
+.carousel-card-content p{color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:32px;font-size:16px;max-width:52ch;font-weight:400}
+.carousel-card-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-tech);font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--orange);background:transparent;backdrop-filter:none;border:1.5px solid rgba(249,115,22,.5);padding:13px 26px;border-radius:var(--radius-full);transition:all .3s cubic-bezier(.16,1,.3,1);box-shadow:0 0 0 0 rgba(249,115,22,.0);white-space:nowrap;font-weight:500}
+.carousel-card-btn:hover{background:rgba(249,115,22,.08);border-color:var(--orange);box-shadow:0 0 24px rgba(249,115,22,.2);transform:translateX(4px)}
+.carousel-card-btn svg{transition:transform .3s cubic-bezier(.16,1,.3,1);width:14px;height:14px;flex-shrink:0}
+.carousel-card-btn:hover svg{transform:translateX(3px)}
+.carousel-nav{display:none}
+
+@media(max-width:1024px){
+  .carousel-wrapper{gap:16px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none}
+  .carousel-wrapper::-webkit-scrollbar{display:none}
+  .carousel-card{flex:none;min-width:120px;width:120px;border-right:1px solid rgba(255,255,255,.08)}
+  .carousel-card.active{min-width:420px;width:420px}
+  .carousel-nav{display:flex;justify-content:flex-end;gap:12px;margin-top:32px}
+  .carousel-nav-btn{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s}
+  .carousel-nav-btn:hover{background:rgba(249,115,22,.1);border-color:rgba(249,115,22,.3)}
+  .carousel-nav-btn svg{width:20px;height:20px;color:var(--white)}
+}
+
+@media(max-width:768px){
+  .carousel-card{min-width:100px;width:100px;height:450px}
+  .carousel-card.active{min-width:340px;width:340px}
+  .carousel-card-number{font-size:100px}
+  .carousel-card-content h3{font-size:32px}
+  .carousel-card-content{left:24px;right:24px;bottom:32px}
+  .carousel-card-label{left:16px}
+}
+
+/* SERVICES - OLD GRID STYLES (keep for potential use elsewhere) */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:64px}
+.svc-card{background:var(--white);border:1px solid var(--slate-200);border-radius:var(--radius-xl);padding:32px 28px;transition:all .4s;position:relative;overflow:hidden}
+.svc-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px -12px rgba(249,115,22,.1);border-color:rgba(249,115,22,.15)}
+.svc-card:hover::after{transform:scaleX(1)}
+.svc-icon{width:48px;height:48px;background:var(--orange-subtle);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:all .3s}
+.svc-card:hover .svc-icon{background:var(--orange)}
+.svc-icon svg{width:22px;height:22px;color:var(--orange);transition:color .3s}
+.svc-card:hover .svc-icon svg{color:var(--white)}
+.svc-card h3{font-size:18px;font-weight:700;color:var(--slate-900);margin-bottom:8px}
+.svc-card p{font-size:14px;color:var(--slate-500);line-height:1.6;margin-bottom:16px}
+.svc-link{font-family:var(--font-tech);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
+.svc-card:hover .svc-link{gap:10px}
+.svc-link svg{width:14px;height:14px}
+.svc-card.emergency{background:linear-gradient(135deg,var(--orange),var(--orange-hover));border:none;color:var(--white)}
+.svc-card.emergency::after{display:none}
+.svc-card.emergency .svc-icon{background:rgba(255,255,255,.15)}
+.svc-card.emergency .svc-icon svg{color:var(--white)}
+.svc-card.emergency h3{color:var(--white)}.svc-card.emergency p{color:rgba(255,255,255,.85)}.svc-card.emergency .svc-link{color:var(--white)}
+.svc-card.emergency:hover{box-shadow:0 20px 50px -12px rgba(249,115,22,.35)}
+
+/* TOOLS */
+.tools-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px;gap:24px;flex-wrap:wrap}
+.tools-header-text{max-width:560px}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--orange);color:var(--orange);padding:12px 24px;border-radius:var(--radius-full);font-family:var(--font-tech);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;transition:all .3s;white-space:nowrap}
+.btn-outline:hover{background:var(--orange);color:var(--white);transform:translateY(-1px)}
+.btn-outline svg{width:14px;height:14px}
+.tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.tool-card{display:flex;gap:20px;align-items:flex-start;padding:28px;background:var(--white);border:1px solid var(--slate-200);border-radius:var(--radius-xl);transition:all .4s;cursor:pointer}
+.tool-card:hover{background:var(--off-white);box-shadow:0 12px 32px -8px rgba(0,0,0,.06);border-color:rgba(249,115,22,.15);transform:translateY(-3px)}
+.tool-icon{width:52px;height:52px;background:var(--off-white);border:1px solid var(--slate-200);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s}
+.tool-card:hover .tool-icon{background:var(--orange);border-color:var(--orange)}
+.tool-icon svg{width:22px;height:22px;color:var(--orange);transition:color .3s}
+.tool-card:hover .tool-icon svg{color:var(--white)}
+.tool-info h3{font-size:16px;font-weight:700;color:var(--slate-900);margin-bottom:4px}
+.tool-info p{font-size:13px;color:var(--slate-500);line-height:1.55}
+.tool-tag{display:inline-block;margin-top:8px;padding:3px 10px;border-radius:var(--radius-full);font-family:var(--font-tech);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.tool-tag.sizing{background:var(--cyan-glow);color:#0891b2}
+.tool-tag.cost{background:var(--orange-subtle);color:var(--orange)}
+.tool-tag.compare{background:rgba(139,92,246,.1);color:#7c3aed}
+.tool-tag.urgent{background:rgba(239,68,68,.1);color:#dc2626}
+
+/* VEGAS DATA */
+.vegas-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:64px}
+.vegas-facts{display:flex;flex-direction:column;gap:20px}
+.fact{display:flex;gap:16px;align-items:flex-start;padding:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-lg);transition:all .3s}
+.fact:hover{background:rgba(255,255,255,.06);border-color:rgba(249,115,22,.15)}
+.fact-icon{width:44px;height:44px;background:rgba(249,115,22,.1);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fact-icon svg{width:20px;height:20px;color:var(--orange)}
+.fact h4{font-size:15px;font-weight:700;color:var(--white);margin-bottom:4px}
+.fact p{font-size:13px;color:var(--slate-500);line-height:1.55}
+.data-cards{display:flex;flex-direction:column;gap:20px}
+.data-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);padding:28px;backdrop-filter:blur(8px);position:relative;overflow:hidden}
+.data-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(249,115,22,.2),transparent)}
+.data-card-title{font-family:var(--font-tech);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--orange);margin-bottom:16px}
+.data-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:14px}
+.data-row:last-child{border-bottom:none}
+.data-row .area{color:var(--slate-400)}.data-row .val{font-weight:700;color:var(--white);font-family:var(--font-tech);letter-spacing:.02em}
+.data-row .val.extreme{color:#f87171}.data-row .val.high{color:#fbbf24}.data-row .val.baseline{color:var(--slate-600);font-weight:400}
+
+/* FAQ */
+.faq-list{max-width:720px;margin:64px auto 0;display:flex;flex-direction:column;gap:12px}
+.faq-item{border:1px solid var(--slate-200);border-radius:var(--radius-xl);overflow:hidden;transition:border-color .3s}
+.faq-item:hover{border-color:var(--slate-300)}
+.faq-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:22px 24px;text-align:left;background:var(--white);gap:16px;transition:background .2s}
+.faq-btn:hover{background:var(--off-white)}
+.faq-btn span{font-size:16px;font-weight:700;color:var(--slate-800)}
+.faq-btn svg{width:18px;height:18px;flex-shrink:0;color:var(--slate-400);transition:all .3s}
+.faq-item.open .faq-btn svg{color:var(--orange);transform:rotate(180deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item.open .faq-answer{max-height:200px}
+.faq-answer-inner{padding:0 24px 22px;font-size:15px;color:var(--slate-600);line-height:1.7}
+
+/* CTA */
+.cta-section{padding:120px 0;background:var(--orange);position:relative;overflow:hidden}
+.cta-texture{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000' fill-opacity='0.06'%3E%3Cpath d='M5 0h1L0 5V4zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.cta-gradient{position:absolute;inset:0;background:linear-gradient(135deg,rgba(234,88,12,.6),transparent 50%,rgba(234,88,12,.4));pointer-events:none}
+.cta-inner{position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto}
+.cta-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(8px);padding:6px 16px;border-radius:var(--radius-full);margin-bottom:32px}
+.cta-badge .ping::before{background:var(--white)}.cta-badge .ping::after{background:var(--white)}
+.cta-badge span:not(.ping){font-family:var(--font-tech);font-size:11px;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:.15em}
+.cta-inner h2{font-family:var(--font-display);font-size:clamp(40px,6vw,72px);color:var(--white);text-transform:uppercase;line-height:.9;margin-bottom:20px}
+.cta-inner>p{font-size:18px;color:rgba(255,255,255,.85);margin-bottom:40px;max-width:540px;margin-left:auto;margin-right:auto;line-height:1.7}
+.cta-btns{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;align-items:center}
+.btn-cta-primary{display:inline-flex;align-items:center;gap:10px;background:var(--white);color:var(--orange-hover);padding:20px 40px;border-radius:var(--radius-full);font-family:var(--font-display);font-size:20px;text-transform:uppercase;transition:all .3s;box-shadow:0 8px 32px rgba(0,0,0,.15)}
+.btn-cta-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.2)}
+.btn-cta-phone{display:flex;align-items:center;gap:12px;color:var(--white)}
+.icon-circle{width:52px;height:52px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);backdrop-filter:blur(8px);transition:all .3s}
+.btn-cta-phone:hover .icon-circle{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.5)}
+.icon-circle svg{width:22px;height:22px}
+.phone-label{font-family:var(--font-tech);font-size:10px;text-transform:uppercase;letter-spacing:.12em;opacity:.8}
+.phone-num{font-family:var(--font-display);font-size:24px;letter-spacing:.02em}
+
+/* AREAS */
+.areas-strip{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:48px}
+.area-chip{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:var(--white);border:1px solid var(--slate-200);border-radius:var(--radius-full);font-family:var(--font-tech);font-size:13px;font-weight:500;color:var(--slate-600);letter-spacing:.02em;transition:all .3s}
+.area-chip:hover{border-color:var(--orange);color:var(--orange);background:var(--orange-subtle)}
+.area-chip svg{width:14px;height:14px;color:var(--orange)}
+.area-chip.soon{opacity:.4;pointer-events:none}
+
+/* FOOTER */
+footer{background:var(--black);color:var(--slate-500);border-top:1px solid rgba(255,255,255,.05);padding:64px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.05)}
+.footer-brand p{margin-top:16px;font-size:14px;line-height:1.7;max-width:320px}
+.footer-col h4{font-family:var(--font-tech);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--slate-300);margin-bottom:20px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col a{font-size:14px;color:var(--slate-500);transition:color .2s}
+.footer-col a:hover{color:var(--white)}
+.footer-disclaimer{padding:32px 0;font-size:12px;line-height:1.9;color:rgba(255,255,255,.45);text-align:center;max-width:900px;margin:0 auto}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid rgba(255,255,255,.04);font-family:var(--font-tech);font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.04em}
+.footer-bottom-links{display:flex;gap:24px}
+.footer-bottom-links a:hover{color:var(--slate-300)}
+
+/* STICKY MOBILE */
+.sticky-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--black);border-top:1px solid rgba(255,255,255,.08);padding:12px 16px;gap:12px}
+.bar-call{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--orange);color:var(--white);padding:14px;border-radius:var(--radius-lg);font-family:var(--font-tech);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;box-shadow:0 4px 16px rgba(249,115,22,.3)}
+.bar-call svg{width:18px;height:18px}
+.bar-tools{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:14px;border-radius:var(--radius-lg);font-family:var(--font-tech);font-size:13px;font-weight:600;letter-spacing:.04em}
+.bar-tools svg{width:18px;height:18px}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-layout{grid-template-columns:1fr;gap:48px}
+  .hero-card{max-width:480px}
+  .steps::before{display:none}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .tools-grid{grid-template-columns:1fr}
+  .vegas-grid{grid-template-columns:1fr;gap:48px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:768px){
+  .nav,.header-cta-wrap{display:none}
+  .mobile-toggle{display:block}
+  .hero{padding:120px 0 80px;min-height:auto}
+  .hero h1{font-size:clamp(40px,10vw,52px)}
+  .hero-btns{flex-direction:column}.btn-call,.btn-tools{width:100%;justify-content:center}
+  .hero-trust{justify-content:center}
+  .hero-card{max-width:100%}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat-cell:nth-child(2){border-right:none}
+  .stat-cell:nth-child(n+3){border-top:1px solid rgba(255,255,255,.05)}
+  .light-section,.warm-section,.dark-section{padding:64px 0}
+  .steps{grid-template-columns:1fr;gap:40px}
+  .services-grid{grid-template-columns:1fr}
+  .tools-header{flex-direction:column;align-items:flex-start}
+  .tools-grid{grid-template-columns:1fr}
+  .vegas-grid{grid-template-columns:1fr}
+  .cta-section{padding:80px 0}
+  .cta-btns{flex-direction:column;align-items:center}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center}
+  .sticky-bar{display:flex}
+  body{padding-bottom:72px}
+}
+@media(max-width:420px){.hero h1{font-size:38px}.sec-title{font-size:28px}.cta-inner h2{font-size:36px}}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="container header-inner">
+    <a href="/" class="logo"><div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div><div class="logo-type">Vegas <span class="orange">Plumbing</span> Pros</div></a>
+    <div class="header-cta-wrap">
+      <a href="#" class="btn-header call-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;margin-right:8px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="phone-text-short">Get Help</span></a>
+    </div>
+    <button class="mobile-toggle" onclick="openMobileNav()" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-top"><div class="logo-type">Vegas <span class="orange">Plumbing</span> Pros</div><button class="mobile-nav-close" onclick="closeMobileNav()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+  <div class="mobile-nav-links"><a href="/services/" onclick="closeMobileNav()">Services</a><a href="/locations/" onclick="closeMobileNav()">Locations</a><a href="/tools/" onclick="closeMobileNav()">Tools</a><a href="/how-it-works/" onclick="closeMobileNav()">How It Works</a><a href="/support/" onclick="closeMobileNav()">Support</a><a href="/contact/" onclick="closeMobileNav()">Contact</a></div>
+  <div class="mobile-nav-bottom"><a href="#" class="btn-call call-link" style="justify-content:center;width:100%;border-radius:12px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="phone-text">Call Now</span></a></div>
+</div>
+
+<section class="hero">
+  <div class="hero-grid-bg"></div><div class="hero-glow-1"></div><div class="hero-glow-2"></div><div class="hero-orb"></div><div class="hero-fade"></div>
+  <div class="container hero-layout">
+    <div>
+      <div class="hero-status reveal"><span class="ping"></span><span class="status-text">Technicians Available Now</span></div>
+      <h1 class="reveal reveal-d1">Zero<br><span class="grad">Plumbing</span><br>Failures</h1>
+      <p class="hero-sub reveal reveal-d2">Describe your issue. We connect you with a licensed Las Vegas plumber — fast. Free for homeowners, available around the clock.</p>
+      <div class="hero-btns reveal reveal-d3">
+        <a href="#" class="btn-call call-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="phone-text">Call Now</span></a>
+      </div>
+      <div class="hero-trust reveal reveal-d4">
+        <div class="trust-chip"><svg class="green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg> Licensed &amp; Insured</div>
+        <div class="trust-chip"><svg class="cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 24/7 Available</div>
+        <div class="trust-chip"><svg class="orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Las Vegas Valley</div>
+      </div>
+    </div>
+    <div class="hero-card reveal reveal-d5">
+      <div class="hero-card-header"><span class="hero-card-label">System Status</span><span class="hero-card-live"><span class="ping"></span> Live</span></div>
+      <div class="hero-card-stats">
+        <div class="hero-stat"><div class="hero-stat-val">24/7</div><div class="hero-stat-lbl">Always On</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">$0</div><div class="hero-stat-lbl">Service Fee</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">100%</div><div class="hero-stat-lbl">Licensed Pros</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">LV</div><div class="hero-stat-lbl">Local Only</div></div>
+      </div>
+      <div class="hero-card-features">
+        <div class="hero-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No booking fees or hidden charges</div>
+        <div class="hero-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> You pay the plumber directly</div>
+        <div class="hero-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Emergency &amp; scheduled service</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-ticker"><div class="container"><div class="stats-grid">
+  <div class="stat-cell"><div class="stat-val">24/7</div><div class="stat-lbl">Dispatch Ready</div></div>
+  <div class="stat-cell"><div class="stat-val">3</div><div class="stat-lbl">Service Areas</div></div>
+  <div class="stat-cell"><div class="stat-val">$0</div><div class="stat-lbl">Connection Fee</div></div>
+  <div class="stat-cell"><div class="stat-val">100%</div><div class="stat-lbl">Licensed Network</div></div>
+</div></div></div>
+
+<section class="light-section"><div class="container">
+  <div class="sec-label reveal">How It Works</div>
+  <div class="sec-title reveal reveal-d1">Three Steps<br>To <span class="muted">Getting Help</span></div>
+  <p class="sec-sub reveal reveal-d2">We handle the search so you don't have to. Free, fast, no obligations.</p>
+  <div class="steps">
+    <div class="step reveal"><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="step-num">Step 01</div><h3>Call or Use a Tool</h3><p>Describe your plumbing issue over the phone or use our free diagnostic tools.</p></div>
+    <div class="step reveal reveal-d2"><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="step-num">Step 02</div><h3>We Connect You</h3><p>We match you with a licensed, insured Las Vegas plumber for your specific issue.</p></div>
+    <div class="step reveal reveal-d4"><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M4 22H2V11h2"/></svg></div><div class="step-num">Step 03</div><h3>Problem Solved</h3><p>The plumber contacts you directly. You agree on scope and pricing — no middleman fees.</p></div>
+  </div>
+</div></section>
+
+<section class="dark-section"><div class="ambient"></div><div class="container">
+  <div class="sec-label reveal">Our Expertise</div>
+  <div class="sec-title reveal reveal-d1">Complete <span class="muted">Coverage</span></div>
+  <p class="sec-sub reveal reveal-d2">We connect you with specialists for every residential plumbing issue across the Las Vegas Valley.</p>
+  
+  <div class="services-carousel reveal reveal-d3">
+    <div class="carousel-wrapper" id="servicesCarousel">
+      
+      <div class="carousel-card" onclick="toggleCard(this)">
+        <div class="carousel-card-bg" style="background-image:url('data:image/svg+xml,%3Csvg width="800" height="600" xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3ClinearGradient id="g" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:%23111827"/%3E%3Cstop offset="100%25" style="stop-color:%23050b14"/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill="url(%23g)" width="800" height="600"/%3E%3C/svg%3E')"></div>
+        <div class="carousel-card-number">01</div>
+        <div class="carousel-card-label">15M AVG RESPONSE</div>
+        <div class="carousel-card-side">
+          <span class="carousel-card-side-num">01</span>
+          <span class="carousel-card-side-text">EMERGENCY REPAIR</span>
+        </div>
+        <div class="carousel-card-content">
+          <h3>Emergency<br>Repair</h3>
+          <p>Burst pipes? Sewage backup? We dispatch immediately to stop water damage and restore your safety. 24/7 readiness.</p>
+          <a href="#" class="carousel-card-btn call-link" onclick="event.stopPropagation()">
+            <span class="phone-text-action">Start Emergency Repair</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="carousel-card" onclick="toggleCard(this)">
+        <div class="carousel-card-bg" style="background-image:url('data:image/svg+xml,%3Csvg width="800" height="600" xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3ClinearGradient id="g2" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:%230a1628"/%3E%3Cstop offset="100%25" style="stop-color:%23050b14"/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill="url(%23g2)" width="800" height="600"/%3E%3C/svg%3E')"></div>
+        <div class="carousel-card-number">02</div>
+        <div class="carousel-card-label">6K+ INSTALLS</div>
+        <div class="carousel-card-side">
+          <span class="carousel-card-side-num">02</span>
+          <span class="carousel-card-side-text">HOME UPGRADES</span>
+        </div>
+        <div class="carousel-card-content">
+          <h3>Home<br>Upgrades</h3>
+          <p>Stop tolerating low pressure and cold water. We install high-efficiency heaters and filtration systems to improve your daily life.</p>
+          <a href="/services/water-heater-repair/" class="carousel-card-btn" onclick="event.stopPropagation()">
+            <span>Start Home Upgrades</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="carousel-card" onclick="toggleCard(this)">
+        <div class="carousel-card-bg" style="background-image:url('data:image/svg+xml,%3Csvg width="800" height="600" xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3ClinearGradient id="g3" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:%23111827"/%3E%3Cstop offset="100%25" style="stop-color:%23020408"/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill="url(%23g3)" width="800" height="600"/%3E%3C/svg%3E')"></div>
+        <div class="carousel-card-number">03</div>
+        <div class="carousel-card-label">ISO 9001 CERTIFIED</div>
+        <div class="carousel-card-side">
+          <span class="carousel-card-side-num">03</span>
+          <span class="carousel-card-side-text">COMMERCIAL PLUMBING</span>
+        </div>
+        <div class="carousel-card-content">
+          <h3>Commercial<br>Plumbing</h3>
+          <p>Plumbing failures kill revenue. We provide heavy-duty solutions, code compliance, and rapid repairs for business infrastructure.</p>
+          <a href="/services/commercial/" class="carousel-card-btn" onclick="event.stopPropagation()">
+            <span>Start Commercial Plumbing</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="carousel-card" onclick="toggleCard(this)">
+        <div class="carousel-card-bg" style="background-image:url('data:image/svg+xml,%3Csvg width="800" height="600" xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3ClinearGradient id="g4" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:%230f172a"/%3E%3Cstop offset="100%25" style="stop-color:%23050b14"/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill="url(%23g4)" width="800" height="600"/%3E%3C/svg%3E')"></div>
+        <div class="carousel-card-number">04</div>
+        <div class="carousel-card-label">ADVANCED TECH</div>
+        <div class="carousel-card-side">
+          <span class="carousel-card-side-num">04</span>
+          <span class="carousel-card-side-text">LEAK DETECTION</span>
+        </div>
+        <div class="carousel-card-content">
+          <h3>Leak<br>Detection</h3>
+          <p>Hidden leaks destroy homes silently. Our specialists use thermal imaging and acoustic technology to find and fix leaks before major damage.</p>
+          <a href="/services/leak-detection/" class="carousel-card-btn" onclick="event.stopPropagation()">
+            <span>Start Leak Detection</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="carousel-nav reveal reveal-d4">
+    <button class="carousel-nav-btn" onclick="scrollCarousel('left')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="carousel-nav-btn" onclick="scrollCarousel('right')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+
+</div></section>
+
+<section class="light-section"><div class="container">
+  <div class="tools-header"><div class="tools-header-text"><div class="sec-label reveal">Free Tools</div><div class="sec-title reveal reveal-d1">Built For<br><span class="muted">Las Vegas</span></div><p class="sec-sub reveal reveal-d2">Calculators calibrated with Vegas water hardness, soil conditions, and local pricing.</p></div><a href="/tools/" class="btn-outline reveal">View All <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a></div>
+  <div class="tools-grid">
+    <div class="tool-card reveal"><div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6"/><path d="M9 13h6"/><path d="M9 17h4"/></svg></div><div class="tool-info"><h3>Water Heater Size Calculator</h3><p>Find the right capacity. Adjusted for Vegas hard water impact on lifespan.</p><span class="tool-tag sizing">Sizing</span></div></div>
+    <div class="tool-card reveal reveal-d1"><div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="tool-info"><h3>Replacement Cost Estimator</h3><p>Realistic ranges using Clark County labor rates, permit fees, and your home specifics.</p><span class="tool-tag cost">Cost</span></div></div>
+    <div class="tool-card reveal reveal-d2"><div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div><div class="tool-info"><h3>Leak Severity Calculator</h3><p>How much are you losing? Calculate damage risk and get urgency guidance.</p><span class="tool-tag urgent">Urgent</span></div></div>
+    <div class="tool-card reveal reveal-d3"><div class="tool-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="tool-info"><h3>Tank vs Tankless Comparison</h3><p>10-year total cost using NV Energy rates and Vegas water conditions.</p><span class="tool-tag compare">Compare</span></div></div>
+  </div>
+</div></section>
+
+<section class="dark-section"><div class="ambient"></div><div class="container">
+  <div class="sec-label reveal">Local Intelligence</div>
+  <div class="sec-title reveal reveal-d1">Your Home Faces<br>Challenges <span class="muted">Others Ignore</span></div>
+  <div class="vegas-grid">
+    <div class="vegas-facts">
+      <div class="fact reveal"><div class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div><div><h4>Extreme Hard Water</h4><p>Vegas water runs 15-24 GPG — far above the 3-7 GPG national average. Cuts water heater lifespan 25-40%.</p></div></div>
+      <div class="fact reveal reveal-d1"><div class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div><h4>100% Slab Foundation</h4><p>Nearly every Vegas home sits on concrete. Slab leaks require specialized detection and repair.</p></div></div>
+      <div class="fact reveal reveal-d2"><div class="fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></div><div><h4>Desert Climate Impact</h4><p>115°F summers cause thermal expansion and pressure failures. Caliche soil adds 20-40% to sewer trenching.</p></div></div>
+    </div>
+    <div class="data-cards">
+      <div class="data-card reveal reveal-d3"><div class="data-card-title">Water Hardness by Area (GPG)</div><div class="data-row"><span class="area">Summerlin / West Valley</span><span class="val high">15-18</span></div><div class="data-row"><span class="area">Central Las Vegas</span><span class="val high">16-22</span></div><div class="data-row"><span class="area">North Las Vegas</span><span class="val high">16-20</span></div><div class="data-row"><span class="area">Henderson / Green Valley</span><span class="val extreme">20-24</span></div><div class="data-row" style="padding-top:14px;border-top:1px solid rgba(255,255,255,.08)"><span class="area" style="color:var(--slate-600)">National Average</span><span class="val baseline">3-7</span></div></div>
+      <div class="data-card reveal reveal-d4"><div class="data-card-title">Vegas Risk Factors</div><div class="data-row"><span class="area">Slab leak prevalence</span><span class="val extreme">High</span></div><div class="data-row"><span class="area">Water heater lifespan reduction</span><span class="val high">25-40%</span></div><div class="data-row"><span class="area">Sewer trenching cost premium</span><span class="val high">+20-40%</span></div><div class="data-row"><span class="area">Polybutylene pipe risk (1990s)</span><span class="val extreme">High</span></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="light-section"><div class="container">
+  <div style="text-align:center"><div class="sec-label reveal" style="justify-content:center">Common Questions</div></div>
+  <div class="sec-title reveal reveal-d1" style="text-align:center">Got <span class="muted">Questions?</span></div>
+  <div class="faq-list">
+    <div class="faq-item open reveal"><button class="faq-btn" onclick="toggleFaq(this)"><span>How does Vegas Plumbing Pros work?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">We're a free connection service for homeowners. When you call or use one of our tools, we match you with a licensed, insured plumber in your area. You deal directly with the plumber — we never charge you a fee.</div></div></div>
+    <div class="faq-item reveal reveal-d1"><button class="faq-btn" onclick="toggleFaq(this)"><span>Do you actually do the plumbing work?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">No. Vegas Plumbing Pros is a referral service. We connect you with independent, third-party plumbing contractors. All pricing, scheduling, and work is between you and the plumber.</div></div></div>
+    <div class="faq-item reveal reveal-d2"><button class="faq-btn" onclick="toggleFaq(this)"><span>Is there really no fee for homeowners?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Correct — our service is completely free for homeowners. You pay the plumber directly for any work performed. No booking fees, connection fees, or hidden charges.</div></div></div>
+    <div class="faq-item reveal reveal-d3"><button class="faq-btn" onclick="toggleFaq(this)"><span>What areas do you serve?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">We currently cover Las Vegas, Henderson, and Summerlin. We're expanding to North Las Vegas once we confirm reliable provider coverage in that area.</div></div></div>
+    <div class="faq-item reveal reveal-d4"><button class="faq-btn" onclick="toggleFaq(this)"><span>Are the plumbers licensed and insured?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">All providers in our network are verified through our partner network for active licensing and insurance. We recommend homeowners independently verify credentials before authorizing work.</div></div></div>
+  </div>
+</div></section>
+
+<section class="cta-section"><div class="cta-texture"></div><div class="cta-gradient"></div><div class="container cta-inner">
+  <div class="cta-badge reveal"><span class="ping"></span><span>Technicians Ready Now</span></div>
+  <h2 class="reveal reveal-d1">Don't Let Leaks<br>Wreck Your Home</h2>
+  <p class="reveal reveal-d2">Every hour of delay costs more in damage. Talk to a licensed Las Vegas plumber right now — no forms, no waiting.</p>
+  <div class="cta-btns reveal reveal-d3">
+    <a href="#" class="btn-cta-primary call-link"><span class="phone-text-action">Call Now</span></a>
+  </div>
+</div></section>
+
+<section class="light-section" style="padding:64px 0"><div class="container" style="text-align:center">
+  <div class="sec-label reveal" style="justify-content:center">Service Areas</div>
+  <div class="sec-title reveal reveal-d1">Las Vegas <span class="muted">Valley</span></div>
+  <div class="areas-strip">
+    <a href="/locations/las-vegas/" class="area-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Las Vegas</a>
+    <a href="/locations/henderson/" class="area-chip reveal reveal-d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Henderson</a>
+    <a href="/locations/summerlin/" class="area-chip reveal reveal-d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Summerlin</a>
+    <a href="/locations/north-las-vegas/" class="area-chip reveal reveal-d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> North Las Vegas</a>
+  </div>
+</div></section>
+
+<footer><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="logo-type" style="font-size:24px">Vegas <span class="orange">Plumbing</span> Pros</div><p>Free plumbing connection service for Las Vegas Valley homeowners. We help you find the right licensed plumber — fast.</p></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="/services/emergency-plumber/">Emergency</a></li><li><a href="/services/water-heater-repair/">Water Heater</a></li><li><a href="/services/leak-detection/">Leak Detection</a></li><li><a href="/services/drain-cleaning/">Drain Cleaning</a></li><li><a href="/services/sewer-line-repair/">Sewer Line</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="/tools/">Free Tools</a></li><li><a href="/resources/hard-water-las-vegas/">Hard Water Guide</a></li><li><a href="/how-it-works/">How It Works</a></li><li><a href="/vetting-standards/">Vetting Standards</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="/fees-and-pricing/">Fees &amp; Pricing</a></li><li><a href="/support/">Support</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy/">Privacy Policy</a></li></ul></div>
+  </div>
+  <div class="footer-disclaimer">Vegas Plumbing Pros is a free service to assist homeowners in connecting with local service providers. All contractors/providers are independent and Vegas Plumbing Pros does not warrant or guarantee any work performed. It is the responsibility of the homeowner to verify that the hired contractor furnishes the necessary license and insurance required for the work being performed. All persons depicted in a photo or video are actors or models and not contractors listed on Vegas Plumbing Pros. Phone calls made through this website may be recorded for quality assurance purposes.</div>
+  <div class="footer-bottom"><span>&copy; 2026 Vegas Plumbing Pros. All rights reserved.</span><div class="footer-bottom-links"><a href="/privacy/">Privacy</a><a href="/fees-and-pricing/">Fees</a><a href="/support/">Support</a><a href="/cdn-cgi/l/email-protection#2048454c4c4f605645474153504c554d42494e4750524f530e434f4d"><span class="__cf_email__" data-cfemail="0f676a6363604f796a686e7c7f637a626d6661687f7d607c216c6062">[email&#160;protected]</span></a></div></div>
+</div></footer>
+
+<div class="sticky-bar" id="stickyBar">
+  <a href="#" class="bar-call call-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span class="phone-text-short">Call Now</span></a>
+  <a href="/tools/" class="bar-tools"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6"/><path d="M9 13h6"/><path d="M9 17h4"/></svg> Free Tools</a>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function(){var p='(888) 217-4109',t='tel:+18882174109';document.querySelectorAll('.phone-text').forEach(function(e){e.textContent='Call Now: '+p});document.querySelectorAll('.phone-text-short').forEach(function(e){e.textContent=p});document.querySelectorAll('.phone-text-action').forEach(function(e){e.textContent=p});document.querySelectorAll('.phone-num').forEach(function(e){e.textContent=p});document.querySelectorAll('.call-link').forEach(function(e){e.href=t})})();
+var hdr=document.getElementById('header');window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>30)});
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+function openMobileNav(){document.getElementById('mobileNav').classList.add('open');document.body.style.overflow='hidden'}
+function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');document.body.style.overflow=''}
+function toggleFaq(btn){var item=btn.closest('.faq-item');item.classList.toggle('open')}
+function scrollCarousel(direction){var carousel=document.getElementById('servicesCarousel');var scrollAmount=440;if(direction==='left'){carousel.scrollBy({left:-scrollAmount,behavior:'smooth'})}else{carousel.scrollBy({left:scrollAmount,behavior:'smooth'})}}
+function toggleCard(card){var allCards=document.querySelectorAll('.carousel-card');allCards.forEach(function(c){if(c!==card){c.classList.remove('active')}});card.classList.toggle('active')}
+</script>
+</body>
+</html>

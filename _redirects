@@ -1,8 +1,19 @@
 # Netlify Redirects Configuration
-# Place this file in the root of your site (vegasplumbingpros/)
+# Vegas Plumbing Pros - Static Multi-Page Site
 
-# Old WordPress URLs (if any existed) - add them here as needed
-# Example: /old-url  /new-url  301
+# Old WordPress URLs — add redirects as needed
+# /old-url  /new-url  301
 
-# Fallback for single-page app routing
-/*  /index.html  200
+# Footer link aliases
+/privacy      /privacy-policy/    301
+/fees         /fees-and-pricing/  301
+
+# Pages not yet built — redirect to homepage
+/services/*          /  302
+/locations/*         /  302
+/resources/*         /  302
+/how-it-works/       /  302
+/vetting-standards/  /  302
+/fees-and-pricing/   /  302
+/support/            /  302
+/contact/            /  302

@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth selection:bg-orange-500 selection:text-white">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumbing Damage Timeline Calculator | Las Vegas Repair Cost Estimator 2026</title>
+    <meta name="description" content="See how fast plumbing problems escalate in Las Vegas. Calculate water waste, damage timeline, and estimated repair costs based on your specific situation.">
+    <link rel="canonical" href="https://vegasplumbingpros.com/tools/damage-timeline/">
+
+    <!-- Favicon (inline SVG) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><path d='M20 4L34 12V28L20 36L6 28V12Z' fill='none' stroke='%23f97316' stroke-width='2'/><circle cx='20' cy='20' r='6' fill='%23f97316'/></svg>">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vegasplumbingpros.com/tools/damage-timeline/">
+    <meta property="og:title" content="Plumbing Damage Timeline Calculator | Vegas Plumbing Pros">
+    <meta property="og:description" content="See how fast plumbing problems escalate. Calculate water waste, damage timeline, and repair costs for Las Vegas homes.">
+    <meta property="og:image" content="https://vegasplumbingpros.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLB869PLKC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CLB869PLKC');
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        black: '#020408',
+                        surface: { 100: '#0A0F18', 200: '#111827', 300: '#1a2332' },
+                        orange: { DEFAULT: '#f97316', dark: '#ea580c' },
+                        green: { DEFAULT: '#22c55e' },
+                        red: { DEFAULT: '#ef4444', dark: '#dc2626' },
+                        cyan: { DEFAULT: '#06b6d4' },
+                        amber: { DEFAULT: '#f59e0b' }
+                    },
+                    fontFamily: {
+                        display: ['Anton', 'sans-serif'],
+                        tech: ['Space Grotesk', 'sans-serif'],
+                        body: ['Manrope', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background: #020408; color: #94a3b8; font-family: 'Manrope', sans-serif; }
+        
+        /* Custom range slider */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, #f97316 0%, #f97316 var(--progress, 50%), #1e293b var(--progress, 50%), #1e293b 100%);
+            border-radius: 999px;
+            outline: none;
+            cursor: pointer;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #f97316;
+            cursor: pointer;
+            box-shadow: 0 0 16px rgba(249,115,22,0.5);
+            border: 3px solid #020408;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
+            box-shadow: 0 0 24px rgba(249,115,22,0.7);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #f97316;
+            cursor: pointer;
+            box-shadow: 0 0 16px rgba(249,115,22,0.5);
+            border: 3px solid #020408;
+        }
+
+        /* Severity pulse */
+        @keyframes severityPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        .severity-pulse { animation: severityPulse 2s ease-in-out infinite; }
+
+        /* Timeline bar animation */
+        .timeline-fill { transition: width 0.6s cubic-bezier(0.25, 0.1, 0.25, 1); }
+
+        /* Card option active states */
+        .option-card {
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .option-card:hover {
+            border-color: rgba(249,115,22,0.4);
+            background: rgba(249,115,22,0.05);
+        }
+        .option-card.active {
+            border-color: #f97316;
+            background: rgba(249,115,22,0.1);
+            box-shadow: 0 0 20px -5px rgba(249,115,22,0.3);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0A0F18; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+
+        /* Grid pattern */
+        .grid-pattern {
+            background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Plumbing Damage Timeline Calculator",
+        "url": "https://vegasplumbingpros.com/tools/damage-timeline/",
+        "description": "Calculate how fast plumbing problems escalate in Las Vegas homes. See water waste, damage timeline, and estimated repair costs.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "provider": {
+            "@type": "Organization",
+            "name": "Vegas Plumbing Pros",
+            "url": "https://vegasplumbingpros.com"
+        }
+    }
+    </script>
+</head>
+<body class="bg-black min-h-screen">
+
+    <!-- Nav -->
+    <nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/[0.06]">
+        <div class="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded border border-orange/30 flex items-center justify-center bg-orange/5 group-hover:bg-orange/10 transition-colors">
+                    <svg viewBox="0 0 40 40" class="w-5 h-5"><path d="M20 4L34 12V28L20 36L6 28V12Z" fill="none" stroke="#f97316" stroke-width="2.5"/><circle cx="20" cy="20" r="5" fill="#f97316"/></svg>
+                </div>
+                <div>
+                    <div class="font-display text-white text-lg uppercase tracking-wide leading-none">Vegas <span class="text-orange">Plumbing</span> Pros</div>
+                    <div class="font-tech text-[9px] text-slate-500 tracking-[0.15em] flex items-center gap-1.5">
+                        <span class="w-1 h-1 bg-green rounded-full"></span>
+                        <span class="w-1 h-1 bg-green rounded-full opacity-70"></span>
+                        Dispatch Online
+                    </div>
+                </div>
+            </a>
+            <a href="tel:+18882174109" onclick="gtag('event','phone_click',{event_category:'conversion',event_label:'damage_timeline_nav'});" class="inline-flex items-center gap-2 bg-orange hover:bg-orange-dark text-white px-6 py-2.5 rounded-full font-tech text-[11px] font-bold uppercase tracking-[0.15em] transition-all hover:shadow-[0_0_20px_-5px_rgba(249,115,22,0.5)]">
+                <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                <span>(888) 217-4109</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="pt-28 pb-12 relative overflow-hidden">
+        <div class="absolute inset-0 grid-pattern opacity-50"></div>
+        <div class="max-w-[1400px] mx-auto px-6 relative z-10">
+            <div class="flex items-center gap-3 mb-6">
+                <a href="/" class="font-tech text-[10px] text-slate-500 uppercase tracking-[0.2em] hover:text-orange transition-colors">Home</a>
+                <span class="text-slate-700">/</span>
+                <a href="/tools/water-waste-auditor/" class="font-tech text-[10px] text-slate-500 uppercase tracking-[0.2em] hover:text-orange transition-colors">Tools</a>
+                <span class="text-slate-700">/</span>
+                <span class="font-tech text-[10px] text-orange uppercase tracking-[0.2em]">Damage Timeline</span>
+            </div>
+
+            <div class="font-tech text-[10px] font-bold uppercase tracking-[0.25em] text-orange mb-4 flex items-center gap-3">
+                <span class="w-1.5 h-1.5 bg-orange rounded-full shadow-[0_0_8px_rgba(249,115,22,0.6)] severity-pulse"></span>
+                Live Damage Projection
+            </div>
+            <h1 class="font-display text-[clamp(36px,6vw,72px)] text-white uppercase leading-[0.9] mb-6">
+                Damage <span class="italic text-orange">Timeline</span>
+            </h1>
+            <p class="font-body text-[17px] text-white/65 leading-[1.8] max-w-[55ch]">
+                See how plumbing problems escalate in Las Vegas homes. Input your situation below — the calculator projects water waste, structural damage risk, and estimated repair costs over time.
+            </p>
+        </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="pb-32 relative">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-8">
+
+                <!-- Left: Inputs -->
+                <div class="space-y-6">
+
+                    <!-- Step 1: Problem Type -->
+                    <div class="bg-surface-100 border border-white/[0.06] rounded-lg p-6 md:p-8">
+                        <div class="font-tech text-[10px] text-slate-500 uppercase tracking-[0.2em] mb-6">01. What's Happening?</div>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3" id="problem-options">
+                            <div class="option-card active border border-white/10 rounded-lg p-4 text-center" data-value="drip" onclick="selectProblem(this)">
+                                <i data-lucide="droplets" class="w-6 h-6 text-cyan mx-auto mb-2"></i>
+                                <div class="font-display text-white text-sm uppercase">Dripping</div>
+                                <div class="font-tech text-[9px] text-slate-500 mt-1">Faucet or pipe</div>
+                            </div>
+                            <div class="option-card border border-white/10 rounded-lg p-4 text-center" data-value="slow_leak" onclick="selectProblem(this)">
+                                <i data-lucide="waves" class="w-6 h-6 text-amber mx-auto mb-2"></i>
+                                <div class="font-display text-white text-sm uppercase">Slow Leak</div>
+                                <div class="font-tech text-[9px] text-slate-500 mt-1">Visible moisture</div>
+                            </div>
+                            <div class="option-card border border-white/10 rounded-lg p-4 text-center" data-value="running_toilet" onclick="selectProblem(this)">
+                                <i data-lucide="refresh-cw" class="w-6 h-6 text-cyan mx-auto mb-2"></i>
+                                <div class="font-display text-white text-sm uppercase">Running Toilet</div>
+                                <div class="font-tech text-[9px] text-slate-500 mt-1">Won't stop</div>
+                            </div>
+                            <div class="option-card border border-white/10 rounded-lg p-4 text-center" data-value="active_leak" onclick="selectProblem(this)">
+                                <i data-lucide="alert-triangle" class="w-6 h-6 text-orange mx-auto mb-2"></i>
+                                <div class="font-display text-white text-sm uppercase">Active Leak</div>
+                                <div class="font-tech text-[9px] text-slate-500 mt-1">Steady stream</div>
+                            </div>
+                            <div class="option-card border border-white/10 rounded-lg p-4 text-center" data-value="slab_leak" onclick="selectProblem(this)">
+                                <i data-lucide="home" class="w-6 h-6 text-red mx-auto mb-2"></i>
+                                <div class="font-display text-white text-sm uppercase">Slab Leak</div>
+                                <div class="font-tech text-[9px] text-slate-500 mt-1">Under foundation</div>
+                            </div>
+                            <div class="option-card border border-white/10 rounded-lg p-4 text-center" data-value="burst" onclick="selectProblem(this)">
+                                <i data-lucide="zap" class="w-6 h-6 text-red mx-auto mb-2"></i>
+                                <div class="font-display text-white text-sm uppercase">Burst Pipe</div>
+                                <div class="font-tech text-[9px] text-slate-500 mt-1">Major flow</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Location -->
+                    <div class="bg-surface-100 border border-white/[0.06] rounded-lg p-6 md:p-8">
+                        <div class="font-tech text-[10px] text-slate-500 uppercase tracking-[0.2em] mb-6">02. Where Is It?</div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="location-options">
+                            <div class="option-card active border border-white/10 rounded-lg p-4 text-center" data-value="kitchen" onclick="selectLocation(this)">
+                                <div class="font-display text-white text-xs uppercase">Kitchen</div>
+                            </div>
+                            <div class="option-card border border-white/10 rounded-lg p-4 text-center" data-value="bathroom" onclick="selectLocation(this)">
+                                <div class="font-display text-white text-xs uppercase">Bathroom</div>
+                            </div>
+                            <div class="option-card border border-white/10 rounded-lg p-4 text-center" data-value="garage" onclick="selectLocation(this)">
+                                <div class="font-display text-white text-xs uppercase">Garage</div>
+                            </div>
+                            <div class="option-card border border-white/10 rounded-lg p-4 text-center" data-value="wall" onclick="selectLocation(this)">
+                                <div class="font-display text-white text-xs uppercase">Inside Wall</div>
+                            </div>
+                            <div class="option-card border border-white/10 rounded-lg p-4 text-center" data-value="foundation" onclick="selectLocation(this)">
+                                <div class="font-display text-white text-xs uppercase">Foundation</div>
+                            </div>
+                            <div class="option-card border border-white/10 rounded-lg p-4 text-center" data-value="water_heater" onclick="selectLocation(this)">
+                                <div class="font-display text-white text-xs uppercase">Water Heater</div>
+                            </div>
+                            <div class="option-card border border-white/10 rounded-lg p-4 text-center" data-value="outdoor" onclick="selectLocation(this)">
+                                <div class="font-display text-white text-xs uppercase">Outdoor</div>
+                            </div>
+                            <div class="option-card border border-white/10 rounded-lg p-4 text-center" data-value="unknown" onclick="selectLocation(this)">
+                                <div class="font-display text-white text-xs uppercase">Not Sure</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Duration -->
+                    <div class="bg-surface-100 border border-white/[0.06] rounded-lg p-6 md:p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="font-tech text-[10px] text-slate-500 uppercase tracking-[0.2em]">03. How Long Has This Been Going On?</div>
+                            <div class="flex items-baseline gap-1">
+                                <span id="duration-value" class="font-display text-3xl text-white">3</span>
+                                <span class="font-tech text-xs text-slate-500">DAYS</span>
+                            </div>
+                        </div>
+                        <input type="range" id="duration-slider" min="1" max="90" value="3" oninput="updateCalculation()" class="w-full">
+                        <div class="flex justify-between mt-3">
+                            <span class="font-tech text-[9px] text-slate-600">1 DAY</span>
+                            <span class="font-tech text-[9px] text-slate-600">30 DAYS</span>
+                            <span class="font-tech text-[9px] text-slate-600">90 DAYS</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Home Details -->
+                    <div class="bg-surface-100 border border-white/[0.06] rounded-lg p-6 md:p-8">
+                        <div class="font-tech text-[10px] text-slate-500 uppercase tracking-[0.2em] mb-6">04. Home Details</div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="font-tech text-[10px] text-slate-500 uppercase tracking-[0.15em] block mb-2">Floor Type</label>
+                                <div class="grid grid-cols-2 gap-2" id="floor-options">
+                                    <div class="option-card active border border-white/10 rounded px-3 py-2.5 text-center" data-value="tile" onclick="selectFloor(this)">
+                                        <div class="font-tech text-white text-xs">Tile</div>
+                                    </div>
+                                    <div class="option-card border border-white/10 rounded px-3 py-2.5 text-center" data-value="wood" onclick="selectFloor(this)">
+                                        <div class="font-tech text-white text-xs">Wood</div>
+                                    </div>
+                                    <div class="option-card border border-white/10 rounded px-3 py-2.5 text-center" data-value="carpet" onclick="selectFloor(this)">
+                                        <div class="font-tech text-white text-xs">Carpet</div>
+                                    </div>
+                                    <div class="option-card border border-white/10 rounded px-3 py-2.5 text-center" data-value="concrete" onclick="selectFloor(this)">
+                                        <div class="font-tech text-white text-xs">Concrete</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="font-tech text-[10px] text-slate-500 uppercase tracking-[0.15em] block mb-2">Construction</label>
+                                <div class="grid grid-cols-2 gap-2" id="construction-options">
+                                    <div class="option-card active border border-white/10 rounded px-3 py-2.5 text-center" data-value="slab" onclick="selectConstruction(this)">
+                                        <div class="font-tech text-white text-xs">Slab</div>
+                                    </div>
+                                    <div class="option-card border border-white/10 rounded px-3 py-2.5 text-center" data-value="raised" onclick="selectConstruction(this)">
+                                        <div class="font-tech text-white text-xs">Raised</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Damage Timeline Visual -->
+                    <div class="bg-surface-100 border border-white/[0.06] rounded-lg p-6 md:p-8">
+                        <div class="font-tech text-[10px] text-slate-500 uppercase tracking-[0.2em] mb-8">Projected Damage Timeline</div>
+                        
+                        <div class="space-y-6" id="timeline">
+                            <!-- 24 hours -->
+                            <div class="relative">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-tech text-xs text-white">24 Hours</span>
+                                    <span class="font-tech text-xs text-slate-500" id="timeline-24h-status">Surface moisture</span>
+                                </div>
+                                <div class="w-full h-2 bg-surface-300 rounded-full overflow-hidden">
+                                    <div id="timeline-24h" class="timeline-fill h-full rounded-full bg-green" style="width:15%"></div>
+                                </div>
+                            </div>
+                            <!-- 48 hours -->
+                            <div class="relative">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-tech text-xs text-white">48 Hours</span>
+                                    <span class="font-tech text-xs text-slate-500" id="timeline-48h-status">Subfloor exposure</span>
+                                </div>
+                                <div class="w-full h-2 bg-surface-300 rounded-full overflow-hidden">
+                                    <div id="timeline-48h" class="timeline-fill h-full rounded-full bg-amber" style="width:30%"></div>
+                                </div>
+                            </div>
+                            <!-- 7 days -->
+                            <div class="relative">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-tech text-xs text-white">7 Days</span>
+                                    <span class="font-tech text-xs text-slate-500" id="timeline-7d-status">Mold risk begins</span>
+                                </div>
+                                <div class="w-full h-2 bg-surface-300 rounded-full overflow-hidden">
+                                    <div id="timeline-7d" class="timeline-fill h-full rounded-full bg-orange" style="width:55%"></div>
+                                </div>
+                            </div>
+                            <!-- 30 days -->
+                            <div class="relative">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-tech text-xs text-white">30 Days</span>
+                                    <span class="font-tech text-xs text-slate-500" id="timeline-30d-status">Structural compromise</span>
+                                </div>
+                                <div class="w-full h-2 bg-surface-300 rounded-full overflow-hidden">
+                                    <div id="timeline-30d" class="timeline-fill h-full rounded-full bg-red" style="width:80%"></div>
+                                </div>
+                            </div>
+                            <!-- 90 days -->
+                            <div class="relative">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-tech text-xs text-white">90 Days</span>
+                                    <span class="font-tech text-xs text-slate-500" id="timeline-90d-status">Major remediation</span>
+                                </div>
+                                <div class="w-full h-2 bg-surface-300 rounded-full overflow-hidden">
+                                    <div id="timeline-90d" class="timeline-fill h-full rounded-full bg-red-dark" style="width:100%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Duration marker -->
+                        <div class="mt-6 pt-6 border-t border-white/[0.06]">
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 rounded-full severity-pulse" id="marker-dot"></div>
+                                <span class="font-tech text-xs" id="marker-text">You are here: 3 days in</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Results Panel (Sticky) -->
+                <div class="lg:sticky lg:top-24 lg:self-start space-y-4">
+
+                    <!-- Water Waste -->
+                    <div class="bg-surface-100 border border-white/[0.06] rounded-lg p-6">
+                        <div class="font-tech text-[10px] text-orange uppercase tracking-[0.2em] font-bold mb-3">Water Wasted So Far</div>
+                        <div class="flex items-baseline gap-2">
+                            <span id="result-gallons" class="font-display text-5xl text-white">52</span>
+                            <span class="font-tech text-sm text-slate-500">Gallons</span>
+                        </div>
+                        <div class="font-tech text-xs text-slate-600 mt-2" id="result-gallons-daily">17.3 gal/day ongoing</div>
+                    </div>
+
+                    <!-- Cost So Far -->
+                    <div class="bg-surface-100 border border-white/[0.06] rounded-lg p-6">
+                        <div class="font-tech text-[10px] text-orange uppercase tracking-[0.2em] font-bold mb-3">Added Water Bill Cost</div>
+                        <div class="flex items-baseline gap-2">
+                            <span id="result-water-cost" class="font-display text-4xl text-green">$0.83</span>
+                        </div>
+                        <div class="font-tech text-xs text-slate-600 mt-2" id="result-water-annual">$101/year if unresolved</div>
+                    </div>
+
+                    <!-- Repair Cost Range -->
+                    <div class="bg-surface-100 border border-red/20 rounded-lg p-6">
+                        <div class="font-tech text-[10px] text-red uppercase tracking-[0.2em] font-bold mb-3">Estimated Repair Cost At This Stage</div>
+                        <div class="flex items-baseline gap-2">
+                            <span id="result-repair-low" class="font-display text-4xl text-white">$150</span>
+                            <span class="font-tech text-sm text-slate-500">–</span>
+                            <span id="result-repair-high" class="font-display text-4xl text-white">$400</span>
+                        </div>
+                        <div class="font-tech text-xs text-slate-600 mt-2" id="result-repair-note">Plumbing repair only</div>
+                    </div>
+
+                    <!-- Damage Cost -->
+                    <div class="bg-surface-100 border border-red/20 rounded-lg p-6" id="damage-cost-card" style="display:none">
+                        <div class="font-tech text-[10px] text-red uppercase tracking-[0.2em] font-bold mb-3">Potential Property Damage</div>
+                        <div class="flex items-baseline gap-2">
+                            <span id="result-damage-low" class="font-display text-3xl text-red">$500</span>
+                            <span class="font-tech text-sm text-slate-500">–</span>
+                            <span id="result-damage-high" class="font-display text-3xl text-red">$2,500</span>
+                        </div>
+                        <div class="font-tech text-xs text-slate-600 mt-2" id="result-damage-note">Flooring, drywall, mold remediation</div>
+                    </div>
+
+                    <!-- Severity Indicator -->
+                    <div class="bg-surface-100 border border-white/[0.06] rounded-lg p-6">
+                        <div class="font-tech text-[10px] text-slate-500 uppercase tracking-[0.2em] mb-4">Cost Escalation Rate</div>
+                        <div class="w-full h-3 bg-surface-300 rounded-full overflow-hidden">
+                            <div id="severity-bar" class="h-full rounded-full transition-all duration-500" style="width:20%; background: linear-gradient(to right, #22c55e, #f59e0b)"></div>
+                        </div>
+                        <div class="flex justify-between mt-2">
+                            <span class="font-tech text-[9px] text-green">LOW</span>
+                            <span class="font-tech text-[9px] text-amber">MODERATE</span>
+                            <span class="font-tech text-[9px] text-red">SEVERE</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <a href="tel:+18882174109" onclick="gtag('event','phone_click',{event_category:'conversion',event_label:'damage_timeline_cta'});" class="inline-flex flex-col items-center bg-orange hover:bg-orange-dark text-white text-center rounded-lg px-8 py-4 transition-all hover:shadow-[0_0_24px_-5px_rgba(249,115,22,0.4)]">
+                        <div class="flex items-center gap-2 mb-1">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <span class="font-display text-xl tracking-wide">(888) 217-4109</span>
+                        </div>
+                        <div class="font-tech text-[9px] uppercase tracking-[0.2em] opacity-70">Talk To A Licensed Plumber</div>
+                    </a>
+
+                    <!-- Disclaimer -->
+                    <div class="text-[10px] text-slate-600 leading-relaxed px-2">
+                        This tool provides estimates for informational purposes only and does not constitute professional advice. Actual conditions vary. Consult a licensed plumber for assessment of your specific situation. Vegas Plumbing Pros is a referral service, not a plumbing contractor.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Tools -->
+    <section class="py-20 bg-surface-100 border-t border-white/[0.06]">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="font-tech text-[10px] text-orange uppercase tracking-[0.25em] mb-6 flex items-center gap-3">
+                <span class="w-6 h-[1px] bg-orange"></span>More Tools
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <a href="/tools/water-waste-auditor/" class="bg-surface-200 border border-white/[0.06] rounded-lg p-6 hover:border-orange/30 transition-colors group">
+                    <i data-lucide="droplets" class="w-5 h-5 text-orange/60 group-hover:text-orange transition-colors mb-3"></i>
+                    <div class="font-display text-white text-sm uppercase mb-1">Water Waste Auditor</div>
+                    <div class="text-xs text-slate-500">Calculate leak cost using LVVWD tiered rates</div>
+                </a>
+                <div class="bg-surface-200 border border-white/[0.06] rounded-lg p-6 opacity-50">
+                    <i data-lucide="flame" class="w-5 h-5 text-orange/30 mb-3"></i>
+                    <div class="font-display text-white text-sm uppercase mb-1">Heater Sizing</div>
+                    <div class="text-xs text-slate-500">Coming soon</div>
+                </div>
+                <div class="bg-surface-200 border border-white/[0.06] rounded-lg p-6 opacity-50">
+                    <i data-lucide="calculator" class="w-5 h-5 text-orange/30 mb-3"></i>
+                    <div class="font-display text-white text-sm uppercase mb-1">Cost Estimator</div>
+                    <div class="text-xs text-slate-500">Coming soon</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black border-t border-white/[0.06]">
+        <div class="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="font-tech text-[10px] text-slate-600 uppercase tracking-[0.15em]">
+                © 2026 Vegas Plumbing Pros — Referral service, not a contractor
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="/privacy-policy/" class="font-tech text-[10px] text-slate-600 uppercase tracking-[0.15em] hover:text-orange transition-colors">Privacy</a>
+                <a href="/terms-and-conditions/" class="font-tech text-[10px] text-slate-600 uppercase tracking-[0.15em] hover:text-orange transition-colors">Terms</a>
+                <a href="/contact/" class="font-tech text-[10px] text-slate-600 uppercase tracking-[0.15em] hover:text-orange transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // State
+        let state = {
+            problem: 'drip',
+            location: 'kitchen',
+            duration: 3,
+            floor: 'tile',
+            construction: 'slab'
+        };
+
+        // Problem data: gallons per day, base repair cost range, damage multiplier
+        const problemData = {
+            drip:           { gpd: 5.7,   repairLow: 85,   repairHigh: 250,  damageMult: 0.3,  label: 'Dripping' },
+            slow_leak:      { gpd: 17.3,  repairLow: 150,  repairHigh: 500,  damageMult: 0.7,  label: 'Slow Leak' },
+            running_toilet: { gpd: 200,   repairLow: 75,   repairHigh: 300,  damageMult: 0.1,  label: 'Running Toilet' },
+            active_leak:    { gpd: 96,    repairLow: 200,  repairHigh: 800,  damageMult: 1.0,  label: 'Active Leak' },
+            slab_leak:      { gpd: 48,    repairLow: 800,  repairHigh: 4000, damageMult: 1.8,  label: 'Slab Leak' },
+            burst:          { gpd: 480,   repairLow: 500,  repairHigh: 3000, damageMult: 2.5,  label: 'Burst Pipe' }
+        };
+
+        // Location damage multiplier
+        const locationMult = {
+            kitchen: 1.2, bathroom: 1.0, garage: 0.6, wall: 1.5,
+            foundation: 2.0, water_heater: 1.3, outdoor: 0.3, unknown: 1.0
+        };
+
+        // Floor damage multiplier
+        const floorMult = {
+            tile: 0.7, wood: 1.6, carpet: 1.4, concrete: 0.5
+        };
+
+        // Construction multiplier
+        const constructionMult = {
+            slab: 1.3, raised: 0.8
+        };
+
+        function selectProblem(el) {
+            document.querySelectorAll('#problem-options .option-card').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            state.problem = el.dataset.value;
+            updateCalculation();
+        }
+
+        function selectLocation(el) {
+            document.querySelectorAll('#location-options .option-card').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            state.location = el.dataset.value;
+            updateCalculation();
+        }
+
+        function selectFloor(el) {
+            document.querySelectorAll('#floor-options .option-card').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            state.floor = el.dataset.value;
+            updateCalculation();
+        }
+
+        function selectConstruction(el) {
+            document.querySelectorAll('#construction-options .option-card').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            state.construction = el.dataset.value;
+            updateCalculation();
+        }
+
+        function updateCalculation() {
+            const slider = document.getElementById('duration-slider');
+            state.duration = parseInt(slider.value);
+            
+            // Update slider visual
+            const progress = ((state.duration - 1) / (90 - 1)) * 100;
+            slider.style.setProperty('--progress', progress + '%');
+            
+            // Duration display
+            document.getElementById('duration-value').textContent = state.duration;
+
+            const p = problemData[state.problem];
+            const locM = locationMult[state.location];
+            const flrM = floorMult[state.floor];
+            const conM = constructionMult[state.construction];
+
+            // Water calculations
+            const totalGallons = Math.round(p.gpd * state.duration);
+            const dailyGallons = p.gpd;
+            
+            // LVVWD tiered water cost (simplified: ~$0.016/gal average)
+            const waterCost = totalGallons * 0.016;
+            const annualWaterCost = Math.round(p.gpd * 365 * 0.016);
+
+            // Repair cost (escalates with duration)
+            const durationEscalation = state.duration <= 7 ? 1.0 :
+                                       state.duration <= 30 ? 1.3 :
+                                       state.duration <= 60 ? 1.8 : 2.5;
+            const repairLow = Math.round(p.repairLow * durationEscalation);
+            const repairHigh = Math.round(p.repairHigh * durationEscalation);
+
+            // Property damage (only shows after sufficient duration/severity)
+            const damageScore = p.damageMult * locM * flrM * conM;
+            const showDamage = (state.duration >= 2 && damageScore > 0.3) || state.duration >= 7;
+            const damageLow = Math.round(damageScore * state.duration * 25);
+            const damageHigh = Math.round(damageScore * state.duration * 85);
+
+            // Severity (0-100)
+            const severity = Math.min(100, Math.round(
+                (p.damageMult * 20) + 
+                (locM * 10) + 
+                (flrM * 8) + 
+                (Math.min(state.duration, 60) / 60 * 40)
+            ));
+
+            // Update DOM - Water
+            document.getElementById('result-gallons').textContent = totalGallons.toLocaleString();
+            document.getElementById('result-gallons-daily').textContent = `${dailyGallons.toFixed(1)} gal/day ongoing`;
+
+            // Update DOM - Water Cost
+            document.getElementById('result-water-cost').textContent = waterCost < 1 ? `$${waterCost.toFixed(2)}` : `$${Math.round(waterCost).toLocaleString()}`;
+            document.getElementById('result-water-annual').textContent = `$${annualWaterCost.toLocaleString()}/year if unresolved`;
+
+            // Update DOM - Repair Cost
+            document.getElementById('result-repair-low').textContent = `$${repairLow.toLocaleString()}`;
+            document.getElementById('result-repair-high').textContent = `$${repairHigh.toLocaleString()}`;
+            document.getElementById('result-repair-note').textContent = state.duration > 30 ? 'Repair complexity increases with duration' : 'Plumbing repair only';
+
+            // Update DOM - Damage Cost
+            const damageCard = document.getElementById('damage-cost-card');
+            if (showDamage && damageLow > 50) {
+                damageCard.style.display = 'block';
+                document.getElementById('result-damage-low').textContent = `$${damageLow.toLocaleString()}`;
+                document.getElementById('result-damage-high').textContent = `$${Math.max(damageHigh, damageLow + 500).toLocaleString()}`;
+                
+                let damageNote = 'Flooring and drywall repair';
+                if (state.duration > 7) damageNote = 'Flooring, drywall, potential mold remediation';
+                if (state.duration > 30) damageNote = 'Structural repair, mold remediation, flooring replacement';
+                if (state.duration > 60) damageNote = 'Major remediation: structural, mold, flooring, drywall';
+                document.getElementById('result-damage-note').textContent = damageNote;
+            } else {
+                damageCard.style.display = 'none';
+            }
+
+            // Update DOM - Severity bar
+            const severityBar = document.getElementById('severity-bar');
+            severityBar.style.width = severity + '%';
+            if (severity < 30) {
+                severityBar.style.background = 'linear-gradient(to right, #22c55e, #22c55e)';
+            } else if (severity < 60) {
+                severityBar.style.background = 'linear-gradient(to right, #22c55e, #f59e0b)';
+            } else if (severity < 80) {
+                severityBar.style.background = 'linear-gradient(to right, #f59e0b, #f97316)';
+            } else {
+                severityBar.style.background = 'linear-gradient(to right, #f97316, #ef4444)';
+            }
+
+            // Update timeline bars based on problem type
+            const timelineIntensity = p.damageMult * locM;
+            document.getElementById('timeline-24h').style.width = Math.min(100, 10 + timelineIntensity * 15) + '%';
+            document.getElementById('timeline-48h').style.width = Math.min(100, 20 + timelineIntensity * 25) + '%';
+            document.getElementById('timeline-7d').style.width = Math.min(100, 35 + timelineIntensity * 30) + '%';
+            document.getElementById('timeline-30d').style.width = Math.min(100, 55 + timelineIntensity * 25) + '%';
+            document.getElementById('timeline-90d').style.width = '100%';
+
+            // Timeline status text
+            const statuses = getTimelineStatuses();
+            document.getElementById('timeline-24h-status').textContent = statuses[0];
+            document.getElementById('timeline-48h-status').textContent = statuses[1];
+            document.getElementById('timeline-7d-status').textContent = statuses[2];
+            document.getElementById('timeline-30d-status').textContent = statuses[3];
+            document.getElementById('timeline-90d-status').textContent = statuses[4];
+
+            // Duration marker
+            const markerDot = document.getElementById('marker-dot');
+            const markerText = document.getElementById('marker-text');
+            if (state.duration <= 1) {
+                markerDot.className = 'w-2 h-2 rounded-full severity-pulse bg-green';
+                markerText.className = 'font-tech text-xs text-green';
+            } else if (state.duration <= 7) {
+                markerDot.className = 'w-2 h-2 rounded-full severity-pulse bg-amber';
+                markerText.className = 'font-tech text-xs text-amber';
+            } else if (state.duration <= 30) {
+                markerDot.className = 'w-2 h-2 rounded-full severity-pulse bg-orange';
+                markerText.className = 'font-tech text-xs text-orange';
+            } else {
+                markerDot.className = 'w-2 h-2 rounded-full severity-pulse bg-red';
+                markerText.className = 'font-tech text-xs text-red';
+            }
+            markerText.textContent = `You are here: ${state.duration} day${state.duration > 1 ? 's' : ''} in`;
+
+            // Track calculation event
+            gtag('event', 'calculate', {
+                event_category: 'tool_use',
+                event_label: 'damage_timeline',
+                problem_type: state.problem,
+                duration_days: state.duration
+            });
+        }
+
+        function getTimelineStatuses() {
+            const p = state.problem;
+            if (p === 'burst') return ['Immediate flooding', 'Subfloor saturated', 'Mold colonization', 'Structural failure risk', 'Total remediation required'];
+            if (p === 'slab_leak') return ['Foundation moisture', 'Slab erosion begins', 'Foundation shift risk', 'Major structural concern', 'Foundation replacement possible'];
+            if (p === 'active_leak') return ['Surface water pooling', 'Subfloor exposure', 'Mold risk significant', 'Structural compromise', 'Full remediation needed'];
+            if (p === 'slow_leak') return ['Surface moisture', 'Material absorption', 'Mold spore growth', 'Hidden structural damage', 'Major repair required'];
+            if (p === 'running_toilet') return ['Water waste only', 'Bill impact growing', 'Mechanism degradation', 'Internal valve damage', 'Complete replacement likely'];
+            return ['Minor surface moisture', 'Material staining', 'Mineral deposit buildup', 'Fixture corrosion', 'Component failure likely'];
+        }
+
+        // Initialize
+        updateCalculation();
+    </script>
+</body>
+</html>
